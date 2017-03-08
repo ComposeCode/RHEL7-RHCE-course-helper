@@ -13,3 +13,75 @@ When the script is executed, any issues with the commands are displayed on scree
 Bash scripts can be written in almost any text editor (such as notepad++, atom, gedit, emacs) but using vi is recommended. The nl command can be used to quickly enumerate a script with line numbers.
 
 ## A simple script
+need example script
+
+```
+  #!/bin/bash
+```
+
+The first line indicates the shell in which the script will run, in our case, it is bash. This first line can also be used to indicate other executables, such as python or bash, which can be used to execute scripts in those languages.
+
+## Making the script executable to other Users
+
+First make it executable
+
+```
+ # chmod +x /usr/local/bin/example_script.sh
+```
+
+The default path variable includes /usr/local/bin by default, so users can execute scripts in that directory either by full path, relative path or script name. If this folder is not in the path variable or if you want to use scripts in another folder, the default profile will need to be modified to include it (/etc/profile). Users can do this manually by modifying the .bash_profile file in their home directory.
+
+To modify the path file at the command line, use the following command. This will append /usr/local/bin to whatever the current path variable contains:
+
+```
+  export PATH=$PATH:/usr/local/bin
+```
+
+## Debugging shell scripts
+
+Writing scripts is typically a rinse-and-repeat process: you write the script, you run it and check for errors, fix them and repeat. However, the following debug technique makes scripting much easier. Add the following the -x option to the bash shell line at the top of the script:
+
+```
+  #!/bin/bash -x
+```
+
+You can also run scripts using bash directly with the -x option like so:
+
+```
+ bash -x /some/script.sh
+```
+
+## Using Variables
+need examples of using local variables in bash scripts
+need examples of using environment variables
+
+## Parsing Command Output
+It possible to store the result of a command into a variable within a script. There are two ways to do this shown below:
+
+```
+  #!/bin/bash
+  HOSTNAME_FULL=`hostname -f`
+  KERNEL_VERSION=$(uname -r)
+  echo "Kernel Version: $KERNEL_VERSION"
+  echo "Hostname: $HOSTNAME_FULL"
+```
+
+need script output
+
+## Positional Parameters/Command line arguements
+The positional parameters/variables and their meanings:
+
+```
+  # Need listing of positional parameters
+  $0 Represents the command or script
+  $1-9 Represents arguments 1 through 9
+  ${10} and above Represents arguments 10 and above.
+  $# Gives the count of all parameters  
+  $* represents all arguements
+  $$ Represents the PID of the command/script
+
+```
+
+## Shifting Command Line Arugments
+
+The shift command is used to mvoe command line arguments one position to the left. During this move, the value of the first argument is lost.
