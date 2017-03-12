@@ -84,4 +84,21 @@ The positional parameters/variables and their meanings:
 
 ## Shifting Command Line Arugments
 
-The shift command is used to mvoe command line arguments one position to the left. During this move, the value of the first argument is lost.
+The shift command is used to move command line arguments one position to the left. During this move, the value of the first argument is lost.
+
+```
+  # need example of using shift.
+
+  echo "The params passed to this script are: $$"
+  echo "The first param passed to the script is: $1"
+  shfit
+  echo "param 2 has now been shifted to param 1 and the value is $1"
+```
+
+The shift command can also be used with a number to indicate how many left shits should occur. For example, shift 5 will shift the parameters five places to the left.
+
+```
+  # need example of multiple shift
+```
+
+# Writing an interactive script
