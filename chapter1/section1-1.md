@@ -184,7 +184,7 @@ The for-do-done loop is one looping construct available for use on the bash term
 
 ## The while-do-done
 
-The while-do-done loop is another available looping construct for use on the bash terminal. The test condition is usually an arithmetic expression containing the test or let command. 
+The while-do-done loop is another available looping construct for use on the bash terminal. The test condition is usually an arithmetic expression containing the test or let command.
 
 ```
   while   condition
