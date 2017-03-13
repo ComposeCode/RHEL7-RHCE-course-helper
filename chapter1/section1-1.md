@@ -87,6 +87,7 @@ The positional parameters/variables and their meanings:
 The shift command is used to move command line arguments one position to the left. During this move, the value of the first argument is lost.
 
 ```
+  #!/bin/bash
   # need example of using shift.
 
   echo "The params passed to this script are: $$"
@@ -101,4 +102,97 @@ The shift command can also be used with a number to indicate how many left shits
   # need example of multiple shift
 ```
 
-# Writing an interactive script
+# Interactive Bash Scripts (Getting input from the User)
+
+Though run-time parameters are useful, sometimes it is better to ask the user for input as it can be more user friendly for some. Bash scripts can prompt the user with questions (such as enter an IP address) and store the input into a variable which can be used within the script. The read command is used to get information from the user and can be seen in the example script below.
+
+```
+   #!/bin/bash
+   echo -e "Enter a value: \c"
+   read USERVALUE
+   echo "You input the variable: $USERVALUE"
+```
+
+Note the use of the \c escape sequence in this script. This ensures that the echo command waits for user input before proceeding. There are other escape sequences used by the bash shell, such as \t for tab, \n for newline, \a for beep (alert), \f for form feed, \r for carriage return and \b for backspace. The escape sequences \h, \u and \w can be used to display the hostname, username and current working directory.
+
+# Logical Statements in scripts
+Logical statements are used to break up and manipulate the flow of execution within bash scripts. At some point a script will most likely need to check for a certain condition before running a command. To do this, the shell offers two logical constructs, the if-then-fi statement and the case statement.
+
+## Exit Codes (return code)
+Exit codes refer to the value returned by a program or script when it finishes execution. The exit code is determined by the outcome of the program based on if there was an error during execution or if it finished successfully.
+
+```
+  need example
+```
+
+## Test Conditions
+Test conditions can be set on numeric values, string values or file using the test command. Test conditions should be enclosed within square brackets [] when not using the test command explicitly.
+
+```
+  need examples of different tests
+  equal
+  not equal
+  less than
+  greater than
+  ...
+```
+
+# IF statements
+
+The if-then-fi statement evaluates the condition for true or false. The statement executes the command(s) specified within the test condition and if they execute to true, then the command(S) within the if block will be executed. If the condition is not met, the code within the block is skipped.
+
+```
+  need example if then fi
+```
+
+# If-then-elif-fi statements
+
+```
+ need example of if-then-elif-fi statements
+```
+
+# Looping statements (repetition)
+Loop statements can be used to repeat a series of commands several times. There are three different statements which can be used for looping, these are for-do-done, while-do-done and until-do-done.
+
+```
+  need examples of different loops
+```
+
+## Loop Test conditions
+The let statement is used in looping constructs to evaluate the condition at each iteration. It compares the value stored in a variable against a pre-defined value. For each iteration the condition is evaluated and depending on the outcome (true or false), the loop will continue.
+
+```
+  need example of let condition.
+
+```
+
+## The for-do-done loop
+
+The for-do-done loop is one looping construct available for use on the bash terminal. The for-do-done loop is executed on an array of elements until all the elements in the list are used up. Each element is assigned to a variable one after the other for being processed within the loop.   
+
+```
+  for VAR in list
+  do
+    command statements
+  done
+```
+
+```
+  need example of for-do-done loop
+
+```
+
+## The while-do-done
+
+The while-do-done loop is another available looping construct for use on the bash terminal. The test condition is usually an arithmetic expression containing the test or let command. 
+
+```
+  while   condition
+  do
+    command block
+  done
+```
+
+```
+  need example of while-do-done loop
+```
