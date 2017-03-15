@@ -1,1 +1,1 @@
-# Red Hat Enterprise Linux 7 - RHCSA - Chapter 2
+# Red Hat Enterprise Linux 7 - RHCE - Chapter 2
