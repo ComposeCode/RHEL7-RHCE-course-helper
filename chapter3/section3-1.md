@@ -14,4 +14,4 @@ A time source is any device that acts as a provider of time to other devices. Th
 
 The most common sources of time employed on computer networks are local system clock, an Internet-based public timeserver, a radio clock and a satellite receiver.
 
-You can arrange for one of the RHEL systems to function as a provider of time using its own clock. This requires the maintenance of correct time on this server either manually or automatically via the cron daemon. Keep in mind, however, that this server
+You can arrange for one of the RHEL systems to function as a provider of time using its own clock. This requires the maintenance of correct time on this server either manually or automatically via the cron daemon. Keep in mind, however, that this server has no way of synchronizing itself with a more reliable and precise external time source. Therefore, using a local system clock as a timeserver with reliance on its own clock is the least recommended option.
