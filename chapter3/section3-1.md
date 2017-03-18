@@ -18,5 +18,10 @@ The most common sources of time employed on computer networks are local system c
 
 You can arrange for one of the RHEL systems to function as a provider of time using its own clock. This requires the maintenance of correct time on this server either manually or automatically via the cron daemon. Keep in mind, however, that this server has no way of synchronizing itself with a more reliable and precise external time source. Therefore, using a local system clock as a timeserver with reliance on its own clock is the least recommended option.
 
-## Internet-based public timesaver
-Several public timeservers (can be found through http://ntp.org) are available via the internet for the provision of time on the network. 
+## Internet-based public timeserver
+Several public timeservers (can be found through http://ntp.org) are available via the internet for the provision of time on the network. One of the systems on the local network is identified and configured to obtain time from one or more of the public timeservers. To use a time source, you may need to open a port in the firewall to allow NTP traffic to pass through. Internet-based timeservers are spread around the world and are typically operated by government agencies, research organizations and universities. This option is preferred over the use of local system clock.
+
+A radio clock is regarded as the most accurate provider of time. A radio clock receives time updates from one or more atomic clocks. Global Positioning System (GPS), National Institute of Science and Technology (NIST) radio station WWVB broadcasts in the Americas and DCF77 radio broadcasts in Europe are some popular radio clock methods. Of these, GPS-based sources are perfect. A direct use of signals from any of these devices requires connectivity of some hardware to a computer that is intended to be used as an organizational or site-wide timeserver.
+
+## NTP Roles
+A role is a function that a system performs from an NTP standpoint; a system can be configured to assume one or more of the following roles:
