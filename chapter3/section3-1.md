@@ -1,4 +1,4 @@
-# Chapter 2, Section 1: Configuring Bonding, Teaming, IPv6, and Routing
+# Chapter 2, Section 1: Network Time Protocol (NTP)
 
 This chapter covers Network Time Protocol (NTP). We will cover the NTP protocol, time sources, NTP roles and stratum levels. We will also cover the NTP packages, tooling and the configuration files.
 
@@ -25,3 +25,20 @@ A radio clock is regarded as the most accurate provider of time. A radio clock r
 
 ## NTP Roles
 A role is a function that a system performs from an NTP standpoint; a system can be configured to assume one or more of the following roles:
+
+- Primary NTP Server: a primary NTP Server gets time from one of the time sources mentioned above, and provides time to one or more secondary servers or clients or both. It can also be configured to broadcast time to secondary servers and clients.
+- Secondary NTP Server: a secondary NTP server receives time from a primary server or directly from one of the time sources mentioned above. It can also be configured to broadcast time to secondary servers and clients.
+- NTP Peer: an NTP peer provides time to an NTP serer and receives time from it. All peers work at the same stratum level, and all of them are considered equally reliable. Both primary and secondary servers can be peers of each other.
+- NTP Client: an NTP client receives time from either a primary or secondary server. A client can be configured in one of the following ways:
+  * As a polling client that contacts a defined NTP server directly for time synchronization
+  * As a broadcast client that listens to time broadcast by an NTP server. A broadcast client binds itself with the NTP server that responds to its requests and synchronizes its clock with it. The NTP server must be configured in the broadcast mode in order for a broadcast client to be able to bind to it. A broadcast NTP configuration cannot span the local subnet.
+  * A multicast client operates in a similar fashion as a broadcast client; however, it is able to span the local subnet. The NTP server must be configured in the multicast mode in order for a multicast client to work with it.
+  * A manycast client automatically discovers manycast NTP servers and uses the ones with the best performance. The NTP server must be configured in the many cast mode in order for a many cast client to work with it.
+
+## Stratum levels
+
+Need explanation of stratum levels.
+
+```
+  Need diagram explaining Stratum levels
+```
