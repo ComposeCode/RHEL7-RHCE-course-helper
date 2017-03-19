@@ -1,4 +1,4 @@
-# Chapter 2, Section 1: Network Time Protocol (NTP)
+# Chapter 3, Section 1: Network Time Protocol (NTP)
 
 This chapter covers Network Time Protocol (NTP). We will cover the NTP protocol, time sources, NTP roles and stratum levels. We will also cover the NTP packages, tooling and the configuration files.
 
