@@ -96,4 +96,10 @@ Firewalld gives us the ability to pass security rules directly to iptables using
 Rich language uses several elements to set rules and name them. These elements include a source address or range within an appropriate netmask; destination address or range with an appropriate netmask; service name; port number or range; protocol; masquerade (enable or disable); forward-port (destination port number or range to divert traffic to); log and log level and an action (accept: to grand new connection requests, reject: to disallow within a reason returned or drop: discard requests without informing the sender).
 
 ### Network Address Translation (NAT) and IP Masquerading.
-NAT refers to the process of altering the IP address of a source or destination network that is enclosed in a datagram packet header while it passes through a device that supports this type of modification. To summarize, NAT allows a system on an internal network (home or corporate) to access external networks (the internet) using a single, registered IP address configured on an intermediary device (a router or firewall). 
+NAT refers to the process of altering the IP address of a source or destination network that is enclosed in a datagram packet header while it passes through a device that supports this type of modification. To summarize, NAT allows a system on an internal network (home or corporate) to access external networks (the internet) using a single, registered IP address configured on an intermediary device (a router or firewall).
+
+IP Masquerading is a variant of NAT and it allows several systems on the internal network (192.168.0.0) to access the internet using that single IP (52.29.71.18) of the intermediary device.
+
+```
+   Need NAT diagram/diagram of IP masquerading. 
+```
