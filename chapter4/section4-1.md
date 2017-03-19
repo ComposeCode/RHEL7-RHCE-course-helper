@@ -19,7 +19,6 @@ The firewalld configuration is stored in the /etc/firewalld directory and can be
 Firewalld zones classify incoming network traffic for simplified firewall management. Zones define the level of trust for network connections based on principles such as a source IP or network interface for incoming network traffic. The inbound traffic is checked against zone settings and it is handled appropriately as per configured rules in the zone. Each zone can have its own list of services and ports that are opened or closed. We can create zones with different rulesets. For instance, on a RHEL7 system with multiple network interfaces, we can group interfaces based on pre-defined trust levels and place them into one or more zones that may be activated or deactivated independently as one entity.
 
 Nine zones are provided by default which are shown below:
-
 ```
 [chartwell@workstation zones]$ ll
 total 44
@@ -69,4 +68,32 @@ This file is quite easy to read and is pretty self explanatory, it indicates tha
 Each zone on the system may have one or more interfaces assigned to it. When a service request arrives, firewalld checks whether it is already defined in a zone by the IP it is originated from (the source network) or the network interface it is coming through. If yes, it binds the request with that zone, otherwise, it binds the request with the default zone. This allows us to define and activate several zones at a time even if there is only one network interface on the system.
 
 ### Services
-Using services in zones is the preferred method for firewalld configuration and management. A service typically contains a port number, protocol and an IP address. Service configuration is stored in separate XML files located in the /usr/lib/firewalld/services and /etc/firewalld/services directories for system and user defined services respectively. 
+Using services in zones is the preferred method for firewalld configuration and management. A service typically contains a port number, protocol and an IP address. Service configuration is stored in separate XML files located in the /usr/lib/firewalld/services and /etc/firewalld/services directories for system and user defined services respectively. The configuration files located in the user-defined service directory (/etc/firewalld/services) take precedence over the ones located else where.
+
+It is recommended to copy one of the files from /usr/lib/firewalld/services to /etc/firewalld/services, rename it, and use the firewall-cmd or the graphical firewall-config tool to alter the contents to suit specific needs.
+
+
+```
+[chartwell@workstation zones]$ cat public.xml
+<?xml version="1.0" encoding="utf-8"?>
+<zone>
+<short>Public</short>
+<description>For use in public areas. You do not trust the other computers on networks to not harm your computer. Only selected incoming connections are accepted.</description>
+<service name="ssh"/>
+<service name="mdns"/>
+<service name="dhcpv6-client"/>
+</zone>
+```
+
+### Ports
+
+Network ports in firewalld may also be defined directly without using the service configuration technique. In essence, defining network ports does not require the presence of a service or a service configuration file. The same two tools, firewall-cmd and firewall-config, used for zone and service configuration are also used for port configuration.
+
+### Direct Interface and Rich Language
+
+Firewalld gives us the ability to pass security rules directly to iptables using the direct interface mode; however, these rules are not persistent. We can create rules using rich language instead, using the two management tools, firewall-cmd and firewall-config.
+
+Rich language uses several elements to set rules and name them. These elements include a source address or range within an appropriate netmask; destination address or range with an appropriate netmask; service name; port number or range; protocol; masquerade (enable or disable); forward-port (destination port number or range to divert traffic to); log and log level and an action (accept: to grand new connection requests, reject: to disallow within a reason returned or drop: discard requests without informing the sender).
+
+### Network Address Translation (NAT) and IP Masquerading.
+NAT refers to the process of altering the IP address of a source or destination network that is enclosed in a datagram packet header while it passes through a device that supports this type of modification. To summarize, NAT allows a system on an internal network (home or corporate) to access external networks (the internet) using a single, registered IP address configured on an intermediary device (a router or firewall). 
