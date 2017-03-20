@@ -101,5 +101,7 @@ NAT refers to the process of altering the IP address of a source or destination 
 IP Masquerading is a variant of NAT and it allows several systems on the internal network (192.168.0.0) to access the internet using that single IP (52.29.71.18) of the intermediary device.
 
 ```
-   Need NAT diagram/diagram of IP masquerading. 
+   Need NAT diagram/diagram of IP masquerading.
 ```
+
+Requests made from the internal systems appear to the outside world as being originated from the intermediary device. The intermermediary devices stores the IP addresses of the source systems in its cache, along with randomly generated port number assignments to keep traffic segregated for each system.
