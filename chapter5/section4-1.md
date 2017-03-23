@@ -55,3 +55,21 @@ The output shows the kernel name, version, UUID of the root file system and seve
 We can modify the boot time parameters in two ways, either we modify the grub.cfg file and add the required parameters to the kernel boot string or we modify them at boot time by interrupting GRUB. The first option is permanent, the second is not.
 
 ### Generating System Usage Reports
+
+There are several tools available for reporting system usage. RHEL comprises of sysstat and dstat software packages that include tools to monitor the performance and usage of these resources and generate reports. Other tools such as df (for viewing disk), vmstat (for viewing virtual memory stats), top for viewing realtime CPU, memory, swap and processes and so on.
+
+## The sysstat toolset
+
+The sysstat toolset includes several additional monitoring and performance reporting commands such as cifsiostat, iostat, mpstat, nfsiostat, pidstat, sadf and sar. A description of each tool is given below:
+
+- cifsiostat: reports read and write operations on CIFS file systems
+- iostat: Reports CPU, device and partition statistics.
+- mpstat: Reports activities for each available CPU.
+- nfsiostat: Reports read and write operations on NFS file systems.
+- pidstat: Reports statistics for running
+- sa1: Captures and stores binary data in sadd (system activity daily data) files located in the /var/log/sa directory.
+- sa2: Captures and stores daily reports in sardd (system activity reporter daily data located in the /var/log/sa directory)
+- sadc:
+- sadf:
+- sar:
+- dstat
