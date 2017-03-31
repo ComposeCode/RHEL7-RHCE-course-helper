@@ -39,7 +39,7 @@ The iSCSI technology has several terms that need to be grasped in order to fully
 
 - LUN: A LUN (Logical Unit Number) represents a single addressable logical SCSI disk that is exported on the target server. From an initiator perspective, a LUN is just like any other hard disk attached to it. Disk Management software, such as parted and LVM, treat both LUN and hard disk identically.
 
-- Node: A node is a single discoverable object on the iSCSI SAN. It may represent a target serve or an initiator. A node is identified by its IP address or a unique iSCSI address.
+- Node: A node is a single discoverable object on the iSCSI SAN. It may represent a target server or an initiator. A node is identified by its IP address or a unique iSCSI address.
 
 - Portal: A portal is a combination of an IP address and TCP port that a target server listens on and initiators connect to. iSCSI uses TCP port 3260 by default.
 
@@ -49,4 +49,4 @@ The iSCSI technology has several terms that need to be grasped in order to fully
 
 ## iSCSI Software Packages
 
-A single package
+A single software package, targetcli needs to be installed on the target server in order to provide the iSCSI target functionality. This package has a number of dependencies that are also installed with it. Targetcli implements the open source Linux IO (LIO) iSCSI target subsystem in the kernel to support the configuration and sharing of storage resources and their presentation as block storage to clients over IP networks. 
