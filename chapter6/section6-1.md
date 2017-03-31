@@ -62,3 +62,13 @@ The iSCSI technology has several terms that need to be grasped in order to fully
 - To configure the initiator: you must first discover a target server for LUNs, logging onto discovered target LUNs, using disk management tools to partition, format and mount the LUNS.
 
 ## Understanding the targetcli Command for Target Administration
+
+The targetcli command is an administration shell that allows you to display, create, modify and delete target LUNs. This tool is a complete iSCSI target configuration tool in RHEL7 that acts as an interface between your system and the LIO subsystem in the kernel.  It gives you the ability to present local storage resources backed by a file, whole disk, logical volume, RAID partition, standard partition or ramdisk to iSCSI clients as block storage.
+
+The targetcli tool provides a hierarchical view (similar to the Linux directory tree) of all target LUNs configured on the target server.
+
+Several kernel modules load in the memory to support the setup and operaiton of iSCSI LUNs on the target server. You can view the modules that are currently loaded by running the lsmod command:
+
+```
+lsmod | grep target
+```
