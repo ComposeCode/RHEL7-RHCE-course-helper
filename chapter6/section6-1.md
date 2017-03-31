@@ -85,4 +85,11 @@ When you invoke targetcli, a cli is started:
   need example of running targetcli help command
 ```
 
-Here are a list
+Here is a list of subcommands provided by help:
+- ls (Shows the downward view of the tree form the current location)
+- pwd (Displays the current location in the tree)
+- cd (navigates in the tree)
+- exit (Quits the targetcli shell interface)
+- saveconfig (Saves the modifications)
+- get /set (Gets or sets configuration attributes)
+- sessions (Displays details for open sessions. )
