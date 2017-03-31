@@ -92,4 +92,8 @@ Here is a list of subcommands provided by help:
 - exit (Quits the targetcli shell interface)
 - saveconfig (Saves the modifications)
 - get /set (Gets or sets configuration attributes)
-- sessions (Displays details for open sessions. )
+- sessions (Displays details for open sessions.)
+
+While in the targetcli shell, there are different paths that point to a single target, and each one of them includes a different set of subcommands. The available commands shell prompt change as you navigate the path. You can use the pwd subcommand to view your current location in the tree. The cd subcommand helps you navigate in the tree, and without any options, it displays the full object tree view from where you can highlight and select a desired path and get there directly.
+
+ 
