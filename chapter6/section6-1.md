@@ -102,4 +102,18 @@ Run the ls subcommand to list the entire object hierarchy from the root of the t
   need output of ls subcommand in targetcli
 ```
 
-The tree currently shows an empty view. If you want to move to the block target paht under backstores, run the following: 
+The tree currently shows an empty view. If you want to move to the block target path under backstores, run the following:
+```
+      cd /backstores/block
+```
+
+And run the following to go to the iscsi directory:
+```
+    cd /iscsi
+```
+
+While in any of the object directories, running the ls command show sinformation specific to that object only. For instance, run ls while in the /iscsi directory:
+```
+  ls
+```
+The targetcli command may alternatively be run directly from the command prompt. 
