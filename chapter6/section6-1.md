@@ -72,3 +72,15 @@ Several kernel modules load in the memory to support the setup and operaiton of 
 ```
 lsmod | grep target
 ```
+
+There are additional modules that are loaded when specific target types are configured. These modules include target_core_ibclock for a disk type target, target_core_file for a plain file type target and so on.  
+
+When you invoke targetcli, a cli is started:
+
+```
+  need example of targetcli
+```
+
+```
+  need example of running targetcli help command
+```
