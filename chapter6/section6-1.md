@@ -99,5 +99,7 @@ While in the targetcli shell, there are different paths that point to a single t
 Run the ls subcommand to list the entire object hierarchy from the root of the tree:
 
 ```
-  need output of ls subcommand in targetcli 
+  need output of ls subcommand in targetcli
 ```
+
+The tree currently shows an empty view. If you want to move to the block target paht under backstores, run the following: 
