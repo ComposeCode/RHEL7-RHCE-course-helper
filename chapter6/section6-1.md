@@ -59,4 +59,6 @@ The iSCSI technology has several terms that need to be grasped in order to fully
 
 - To configure the target server: a backstore must be setup and an iSCSI target must be configured on the backstore. A network portal must be assigned, a lun must be created and exported, ACL must be configured for the LUN and the configuration must be saved.
 
-- To configure the initiator:
+- To configure the initiator: you must first discover a target server for LUNs, logging onto discovered target LUNs, using disk management tools to partition, format and mount the LUNS.
+
+## Understanding the targetcli Command for Target Administration
