@@ -45,7 +45,7 @@ The iSCSI technology has several terms that need to be grasped in order to fully
 
 - Target: A target is a server that emulates a backstore as a LUN for use by an initiator over an iSCSI SAN.
 
-- TPG: 
+- TPG: A TPG (target Portal Group) represents one or more network portals assigned to a target LUN for running iSCSI sessions for that LUN.
 
 ## iSCSI Software Packages
 
