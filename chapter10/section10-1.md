@@ -1,4 +1,4 @@
-# Chapter 4, Section 1: Sending and Receiving Email (PostFix)
+# Chapter 10, Section 1: Sending and Receiving Email (PostFix)
 
 This chapter will cover
 
@@ -69,7 +69,7 @@ To reject access to systems on the 192.168.3 network:
 The contents of this file are converted into an indexed database called access.db for Postifx use. After making changes to the access file, run the postmap command on the file to create or update the database:
 
 ```
-show example of converting file into postfix database.
+need show example of converting file into postfix database.
 ```
 
 You can also use the firewall for host, domain and network access restrictions/control.  
@@ -80,9 +80,22 @@ The optional file is used to establish mapping for local and non-local mail addr
 
 To forward mail sent to a local user user1 to user1@yahoo.com:
 
-user1 user1@yahoo.com
+  user1 user1@yahoo.com
+
+To forward all mail destined for example domain to another domain example.com:
+
+    @example.org @example.com
+
+After making changes to this file, postmap should be used to convert the file to postfix syntax.
+
+```
+  Give an example of running postmap
+```
 
 ## The generic File
+
+The optional file is used to establish mapping for local and non-local mail addresses throughout outgoing mail. The syntax of this file is identical to that of the canonical file.
+
 ## The master.cf File
 ## The relocated File
 ## The transport File
