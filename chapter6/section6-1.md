@@ -49,4 +49,8 @@ The iSCSI technology has several terms that need to be grasped in order to fully
 
 ## iSCSI Software Packages
 
-A single software package, targetcli needs to be installed on the target server in order to provide the iSCSI target functionality. This package has a number of dependencies that are also installed with it. Targetcli implements the open source Linux IO (LIO) iSCSI target subsystem in the kernel to support the configuration and sharing of storage resources and their presentation as block storage to clients over IP networks. 
+A single software package, targetcli needs to be installed on the target server in order to provide the iSCSI target functionality. This package has a number of dependencies that are also installed with it. Targetcli implements the open source Linux IO (LIO) iSCSI target subsystem in the kernel to support the configuration and sharing of storage resources and their presentation as block storage to clients over IP networks. This utility is used to manage the LIO subsystem and it runs as a shell interface.
+
+On the client side, the iSCSI initiator functionality becomes available when the iscsi-initaitor-utils package is installed. This package brings the iscsiadm management command, the /etc/iscsi/iscsid.conf configuration file, and other relevant commands and files.
+
+## Managing iSCSI Target Server and Initiator
