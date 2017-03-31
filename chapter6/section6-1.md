@@ -31,15 +31,15 @@ The iSCSI technology has several terms that need to be grasped in order to fully
 
 - Authentication: Authentication allows initiators and targets to prove their identity at the time of discovery and normal access. The iSCSI protocol supports CHAP-based authentication (challenge-handshake authentication protocol) methods that use usernames and passwords but hide the network transmission of passwords. These methods are referred to as CHAP initiator authentication and mutual CHAP authentication. The former requires the initiators to prove their identity to the target by entering valid credentials (one-way authentication), and the latter requires both the initiator and the target to supply their credentials to each other to confirm their identities (two way authentication). The third option, the demo mode, is the default option and it is used to disable authentication feature and open full access for all initiators to all exported target LUNs.
 
-- Backstore: a backstore is a local storage resource thaty serves as the backend for the LUN presented to the initator. A backstore may be entire physical or virtual disk (block), a standard partition (block), a RAID partition (block), an LVM logical volume (block), a plain file (fileio), or a ramdisk image (Ramdisk). The first four represents disk-based block devics, the fileio identifies the backstore as a plain file that is treated as a disk image, and the ramdisk image represents the kernel memory that is treated as a block device. There is another backstroe type called pscsi, however, it is recommended to use the block backstore type instea of pscsi.
+- Backstore: a backstore is a local storage resource thaty serves as the backend for the LUN presented to the initator. A backstore may be entire physical or virtual disk (block), a standard partition (block), a RAID partition (block), an LVM logical volume (block), a plain file (fileio), or a ramdisk image (Ramdisk). The first four represents disk-based block devics, the fileio identifies the backstore as a plain file that is treated as a disk image, and the ramdisk image represents the kernel memory that is treated as a block device. There is another backstroe type called pscsi, however, it is recommended to use the block backstore type instead of pscsi.
 
 - Initiator: An initiator is a client system that accesses LUNS presented by a target server. Initiators are either software or hardware-driven. A software initator is a kernel module that uses iSCSI protocol to emulate a discovered LUN as a block SCSI disk. A hardware initiator, on the other hand, uses a dedicated piece of hardware called an HBA (host bus adapter) to perform the same function. AN HBA offloads system processors by processing SCSI commands on board processors, resulting in improved system performance.
 
-- iSNS:
+- iSNS: An iSNS (internet storage name service) is a protocol that is used by an initiator to discover shared LUNs.
 
-- LUN:
+- LUN: A LUN (Logical Unit Number) represents a single addressable logical SCSI disk that is exported on the target server. From an initiator perspective, a LUN is just like any other hard disk attached to it. Disk Management software, such as parted and LVM, treat both LUN and hard disk identically.
 
-- Node:
+- Node: A node 
 
 - Portal:
 
