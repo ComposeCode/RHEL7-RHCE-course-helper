@@ -96,4 +96,8 @@ Here is a list of subcommands provided by help:
 
 While in the targetcli shell, there are different paths that point to a single target, and each one of them includes a different set of subcommands. The available commands shell prompt change as you navigate the path. You can use the pwd subcommand to view your current location in the tree. The cd subcommand helps you navigate in the tree, and without any options, it displays the full object tree view from where you can highlight and select a desired path and get there directly.
 
- 
+Run the ls subcommand to list the entire object hierarchy from the root of the tree:
+
+```
+  need output of ls subcommand in targetcli 
+```
