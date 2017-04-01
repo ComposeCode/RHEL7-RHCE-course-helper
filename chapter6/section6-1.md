@@ -164,3 +164,5 @@ The /etc/iscsi/initiatorname.iscsi file stores the discovered node names along w
 ```
 
 This file is updated manually with discovered node names that exist in the /var/lib/iscsi/nodes directory
+
+## Summary 
