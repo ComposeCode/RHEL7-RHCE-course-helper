@@ -43,4 +43,14 @@ The use of NFS provides several benefits, such as: supports Linux/Unix and Windo
 
 ### NFS Daemons
 
- NFS is a client/server protocol that employs several daemon programs to work collaboratively in order to export and mount shares, and manage I/O between them. 
+ NFS is a client/server protocol that employs several daemon programs to work collaboratively in order to export and mount shares, and manage I/O between them.
+
+ Below is a list of different daemons used by nfs:
+
+ - nfsd: The NFS Server process that responds to client requests on TCP port 2049 for file access and operations. It also provides the file locking and recovery mechanism. If the client sees an issue with the state of a file on the share, it notifies this server process for an action.
+
+ - rpcbind:
+
+ - rpc.rquotad:
+
+ - rpc.idmapd:
