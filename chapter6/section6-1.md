@@ -155,3 +155,5 @@ The following shows the default uncommented entries form the iscsid.conf file. T
 ```
 
 ## The /etc/iscsi/initiatorname.iscsi file
+
+The /etc/iscsi/initiatorname.iscsi file stores the disocvered node names along with optional aliases using the InitiatorName and InitiatorAlias directives, respectively. This file is read by the iscsid daemon on startup, 
