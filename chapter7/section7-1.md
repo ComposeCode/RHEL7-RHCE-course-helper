@@ -12,4 +12,4 @@ Read and write activities can occur from both the client and the sever while the
 
 The architecture of the protocol is based on a server/client architecture whereby users on one system access files, directories and file systems (known as shares), residing on a remote system as if they were mounted locally on their system. the remote system that makes it shares available for network access is referred to as an NFS server and the process of making the shares accessible is referred to as exporting.
 
-The shares the NFS server exports may be accessed by one or more systems. 
+The shares the NFS server exports may be accessed by one or more systems. These systems are called NFS clients and the process of making the shares accessible on clients is referred to as mounting. 
