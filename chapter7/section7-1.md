@@ -30,4 +30,17 @@ The use of NFS provides several benefits, such as: supports Linux/Unix and Windo
 
 - RHEL7 supports NFS versions 3, 4.0 and 4.1, where NFSv4 is the default.
 - NFSv3 supports both TCP and UDP transport protocols, asynchronous writes, 64 bit file sizes and that gives the clients the ability to access files larger than 2GB.
-- NFSv4 and NFSv4.1 are Internet Engineering Task force (IETF) standard protocols that provide all the features of NFSv3 Protocol. They also provide the ability to transit firewalls, work on the internet, enhance security, encrypted transfers, support for ACLs, greater scalability, better cross-platform interoptability, and better handling of system crashes. They use the TCP protocol by default but can work with UDP for backward compatibility. They use usernames and groupnames rather than UIDs and GIDs for files located on network shares. 
+- NFSv4 and NFSv4.1 are Internet Engineering Task force (IETF) standard protocols that provide all the features of NFSv3 Protocol. They also provide the ability to transit firewalls, work on the internet, enhance security, encrypted transfers, support for ACLs, greater scalability, better cross-platform interoptability, and better handling of system crashes. They use the TCP protocol by default but can work with UDP for backward compatibility. They use usernames and groupnames rather than UIDs and GIDs for files located on network shares.
+
+- NFSv4.1 is the latest NFS protocol version, and one of its attractive features is the support of pNFS (parallel NFS). This new feature greatly improves the I/O performance by allowing NFS clients parallel and direct access to the share that sits on a remote physical storage system and limiting the NFS server role to regulate metadata and manage access.
+
+### NFS Security
+
+- NFSv4 guarantees secure operation of NFS on WANs. When an NFS client attempts to access a remote share, an exchange of information takes place with the server to identify the client and the user on the server, authenticate them to the server and authorize their access to the share.
+
+- In-transit data between the two entities is encrypted to prevent eavesdropping and unauthorized access. NFS may be configured to use an existing Kerberos server for authentication, integrity and data encryption. The NFS protocol uses TCP port 2049 for all communications between the server and client; hence this port must be opened in the firewall for the NFS traffic to pass through.
+
+
+### NFS Daemons
+
+ NFS is a client/server protocol that employs several daemon programs to work collaboratively in order to export and mount shares, and manage I/O between them. 
