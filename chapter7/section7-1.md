@@ -77,8 +77,12 @@ NFS reads configuration data from various files at start up and during its opera
 - /var/lib/nfs/etab: Server file that records entries for exported shares whether or not they are remotely mounted. This file is updated each time a share is exported or unexported.
 - /etc/fstab: Client file system table that contains a list of shares to be mounted at system reboots or manually with the mount command. This file also maintains a list of local file systems.
 - /etc/mtab: Client file that keeps track of mounted shares, as well as the local file systems. the mount and umount commands update file.
-- /etc/sysconfig/nfs: A server- and client-side NFS startup configuration file. 
+- /etc/sysconfig/nfs: A server- and client-side NFS startup configuration file.
 
 ### The /etc/exports File and NFS Server Options
 
 The /etc/exports file defines the configuration for NFS shares. It contains one-line entry per share to be exported. For each share, a pathname, client information and options are included.
+
+These options govern the share access on the clients. Options must be enclosed within parentheses and there must not be any space following the hostname. If an option is specified, it will override its default setting; the other defaults will remain effective.
+
+- * 
