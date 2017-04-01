@@ -85,4 +85,7 @@ The /etc/exports file defines the configuration for NFS shares. It contains one-
 
 These options govern the share access on the clients. Options must be enclosed within parentheses and there must not be any space following the hostname. If an option is specified, it will override its default setting; the other defaults will remain effective.
 
-- * 
+- * (Represents all possible matches for hostnames, IP addresses, domain names, or network addresses.)
+- all_squad (no_all_squash) [no_all_squad] (treats all users, including the root user, on the client as anonymous users)
+- anongid=GID [65534] Assigs this GIF explictly to anonymous groups on the client
+- anonuid=UID [65534] Assigns this UID explicity to anonymous users on the client.
