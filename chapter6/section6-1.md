@@ -116,4 +116,21 @@ While in any of the object directories, running the ls command show sinformation
 ```
   ls
 ```
-The targetcli command may alternatively be run directly from the command prompt. 
+The targetcli command may alternatively be run directly from the command prompt.
+
+## Understanding the iscsiadm Command for Initiator Administration
+
+The primary tool to discover iSCSI targets, to log in to them, and to manage the iSCSI discovery database is the iSCSiadm command. This command interacts with the iscsid daemon and reads the /etc/iscsi/iscsid.conf file for configuration directives at the time of discovering and logging in to new targets.
+
+The iscsiadm command has four modes of operation:
+
+- Discovery: Queries the specified portal for available targets based on the configuration defined in the /etc/iscsi/iscsi.conf file. The records found are stored in discovery database files located in the /var/lib/iscsi directory.
+- Node: Establishes a session with the target and creates a corresponding device files for each discovered LUN in the target.
+- Session: Displays current session information
+- Iface: Defines network portals
+
+There are several options available with the iscsiadm command, some of which are described in Table 19-3:
+- D (--discover), this option discovers targets using Discovery Records. If no matching record is found, a new record is created based on settings defined in the /etc/iscsi/iscsi.conf file.
+- l (--login) Logs in to the specified target
+- L (--loginall) Logs in to all discovered targets.
+- m (--mode) Specifies one of the supported modes of operaiton: discovery, node, fw, iface and session. 
