@@ -156,4 +156,11 @@ The following shows the default uncommented entries form the iscsid.conf file. T
 
 ## The /etc/iscsi/initiatorname.iscsi file
 
-The /etc/iscsi/initiatorname.iscsi file stores the disocvered node names along with optional aliases using the InitiatorName and InitiatorAlias directives, respectively. This file is read by the iscsid daemon on startup, 
+The /etc/iscsi/initiatorname.iscsi file stores the discovered node names along with optional aliases using the InitiatorName and InitiatorAlias directives, respectively. This file is read by the iscsid daemon on startup,, and it is used by the iscsiadm comand to determine node names and aliases. A sample entry from this file is shown below:
+
+```
+  InitiatorName=iqn.2014-09.net.example.server5:mdblun01
+  InitiatorAlias="Lun for database logs"
+```
+
+This file is updated manually with discovered node names that exist in the /var/lib/iscsi/nodes directory
