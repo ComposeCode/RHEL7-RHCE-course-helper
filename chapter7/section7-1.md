@@ -10,4 +10,6 @@ NFS shares may be used for collaboration among group members on a remote system 
 
 Read and write activities can occur from both the client and the sever while the shares accessed and files are modified. These I/O activities can be monitored and used to troubleshoot performance issues.
 
-The architecture of the protocol is based on a server/client architecture whereby users on one system access files, directories and file systems (known as shares), residing on a remote system as if they were mounted locally on their system. the remote system that makes it shsares available for network access is referred to as an NFS server and the process of making the shares accessible is referred to as exporting. 
+The architecture of the protocol is based on a server/client architecture whereby users on one system access files, directories and file systems (known as shares), residing on a remote system as if they were mounted locally on their system. the remote system that makes it shares available for network access is referred to as an NFS server and the process of making the shares accessible is referred to as exporting.
+
+The shares the NFS server exports may be accessed by one or more systems. 
