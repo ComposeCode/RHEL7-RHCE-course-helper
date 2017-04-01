@@ -49,8 +49,23 @@ The use of NFS provides several benefits, such as: supports Linux/Unix and Windo
 
  - nfsd: The NFS Server process that responds to client requests on TCP port 2049 for file access and operations. It also provides the file locking and recovery mechanism. If the client sees an issue with the state of a file on the share, it notifies this server process for an action.
 
- - rpcbind:
+ - rpcbind: Runs on both the server and client. It converts RPC program numbers into universal addresses to facilitate communication for other RPC-based services.
 
- - rpc.rquotad:
+ - rpc.rquotad: Runs on both the server and client. It displays user quota information for a remotely mounted share on the server, and it allows the setup of user quotas on a mounted share on the client.
 
- - rpc.idmapd:
+ - rpc.idmapd: Runs on both the server and the client to control the mappings of UIDs and GIDs with their corresponding usernames and groupnames based on the configuration defined in the /etc/idmapd.conf file.
+
+### NFS Commands
+
+There are a lot of available NFS commands available to manage and configure NFS shares and to monitor their IO.
+
+- exportfs:
+- mount:
+- nfsiostat:
+- nfsstat:
+- montstats:
+
+
+### NFS Configuration and Functional Files
+
+### The /etc/exports File and NFS Server Options
