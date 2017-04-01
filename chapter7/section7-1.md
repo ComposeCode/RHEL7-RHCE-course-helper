@@ -59,13 +59,26 @@ The use of NFS provides several benefits, such as: supports Linux/Unix and Windo
 
 There are a lot of available NFS commands available to manage and configure NFS shares and to monitor their IO.
 
-- exportfs:
-- mount:
-- nfsiostat:
-- nfsstat:
-- montstats:
+- exportfs: Server command that exports shares listed in the /etc/exports file and the files in the /etc/exports.d directory with the .exports extension. I tis also used to display the exported shares as listed in the /var/lib/nfs/etab and /proc/fs/nfs/exports files. Some of the key switches available with this command are -r to re-export entries, -a to perform an action on all configured shares, and -u to unexport the specified share and -v to enable verbosity. This command displays the list of shares when executed without any options.
 
+- mount: clint command that mounts a share specified at the command line or listed in the /etc/fstab file and adds an entry to the /etc/mtab file. Without any options, this command can also be used to display mounted shares as listed in the /etc/mtab fle.
+
+- nfsiostat: Client command that provides NFS I/O statistics on mount shares by consulting the /proc/self/mountstats file.
+
+- nfsstat: Displays NFS and RPC statistics by consulting the /proc/net/rpc/nfsd (server) and /proc/net/rpc/nfs client files, respecitvely.
+
+- mountstats: Client command that displays per-mount statistics by consulting the /proc/self/mountstats file.
 
 ### NFS Configuration and Functional Files
 
+NFS reads configuration data from various files at start up and during its operation:
+
+- /etc/exports: Server file that contains share definitions for export.
+- /var/lib/nfs/etab: Server file that records entries for exported shares whether or not they are remotely mounted. This file is updated each time a share is exported or unexported.
+- /etc/fstab: Client file system table that contains a list of shares to be mounted at system reboots or manually with the mount command. This file also maintains a list of local file systems.
+- /etc/mtab: Client file that keeps track of mounted shares, as well as the local file systems. the mount and umount commands update file.
+- /etc/sysconfig/nfs: A server- and client-side NFS startup configuration file. 
+
 ### The /etc/exports File and NFS Server Options
+
+The /etc/exports file defines the configuration for NFS shares. It contains one-line entry per share to be exported. For each share, a pathname, client information and options are included.
