@@ -133,4 +133,25 @@ There are several options available with the iscsiadm command, some of which are
 - D (--discover), this option discovers targets using Discovery Records. If no matching record is found, a new record is created based on settings defined in the /etc/iscsi/iscsi.conf file.
 - l (--login) Logs in to the specified target
 - L (--loginall) Logs in to all discovered targets.
-- m (--mode) Specifies one of the supported modes of operaiton: discovery, node, fw, iface and session. 
+- m (--mode) Specifies one of the supported modes of operaiton: discovery, node, fw, iface and session.
+- p (--portal) Specifies a target server portal
+- o (--op) Specifies one of the supported modes of operation: discovery, node, fw, iface and session.
+- T (--targetname) Specifies a target name.
+- t (--type) Specifies a type of discovery. Sendtargets (st) is usually used. iSNS is another available type.
+- u (--logout) Logs out from a target
+- U (--logoutall) Logs out form all targets.
+
+## The /etc/iscsi/iscsid.conf File
+
+The /etc/iscsi/iscsid.conf file is the iSSI initiator configuration file that defines several options for the iscsid daemon that dictate how to handle an iSCSI initiator via the iscsiadm command.  
+
+During an iSCSI target discovery ,the iscsiadm command references this file and creates discovery and node reccords which are stored in send_targets (or other supported discovery type) and nodes sub directories under the /var/lib/iscsi directory. The records which are saved in send_targets are used when you attempt to perform discovery on the same target server again, and the records saved in nodes are used when you attempt ot log in to the discovered targets.
+
+The following shows the default uncommented entries form the iscsid.conf file. The grep command is used to remove commented and empty lines form the output:
+
+```
+  # need output from command
+  grep -v '^#|^$' /etc/iscsi/iscsid.conf
+```
+
+## The /etc/iscsi/initiatorname.iscsi file
