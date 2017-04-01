@@ -89,3 +89,9 @@ These options govern the share access on the clients. Options must be enclosed w
 - all_squad (no_all_squash) [no_all_squad] (treats all users, including the root user, on the client as anonymous users)
 - anongid=GID [65534] Assigs this GIF explictly to anonymous groups on the client
 - anonuid=UID [65534] Assigns this UID explicity to anonymous users on the client.
+- async (sync) [sync] Replies to the client requests before changes made by previous requests are written to disk.
+- fsid Identifies the type of share eing exported. Options are device number, root or UUID. This option applies to file system shares only.
+- mp Exports only if the specified share is a file system.
+- root_squash (no_root_squash)
+
+##
