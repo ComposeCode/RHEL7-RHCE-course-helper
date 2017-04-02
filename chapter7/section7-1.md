@@ -122,4 +122,13 @@ Similarly, NFS configuration and functional files already have proper SELinux co
  ll -Z /etc/exports
 ```
 
-However, any directory or file system that you want to export on the network for sharing purposes will need to have either public_content_ro_t or public_content_rw_t SELinux type applied. This is only required if more than one file-sharing servce, such as any ocmbination of NFS, 
+However, any directory or file system that you want to export on the network for sharing purposes will need to have either public_content_ro_t or public_content_rw_t SELinux type applied. This is only required if more than one file-sharing service, such as any combination of NFS and CIFS, NFS and FTP, or CIFS and FTP are used. For use of NFS alone, there is no need to change the context of the directory or file system being shared.
+
+The SELinux policy includes numerous booleans that may be of interest from an NFS operation standpoint. These booleans need a careful review to see which ones might require a toggle for NFS to operate well. Most of these booleans relate to services, such as HTTP, KVM and FTP that want to use mounted NFS shares to store their files. There is one boolean called samba_share_nfs which is enabled in case the same directory or file system is shared via both NFS and CIFS.
+
+```
+  # need output from a machine
+  getsebool -a | egrep '^nfs|^use_nfs'
+```
+
+The output lists four booleans: 
