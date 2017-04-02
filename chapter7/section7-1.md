@@ -99,6 +99,9 @@ These options govern the share access on the clients. Options must be enclosed w
 - subtree_check (no_subtree_check) [no_subtree_check] - Enables permission checks on higher-level directories of a share.
 - wdelay (no_wdelay) [wdelay] - Delays data writes to a share if it expects the arrival of another write request to the same share soon thereby reducing the number of times the actual writes to share must be made.
 
+Here is an example of an export:
 
+/export1 client1 client2 client3.example.com(rw,insecure)
+/export2 client4.example.com(rW) 192.168.1.20(no_root_suash) 192.168.0.0/24
 
-##
+### Configuring NFS Server and Client 
