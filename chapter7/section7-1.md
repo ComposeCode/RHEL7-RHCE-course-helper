@@ -111,8 +111,13 @@ SELinux protects systems by setting appropriate controls using contexts and bool
 To get this information, run the command:
 
 ```
-  need output from machine.
+  #need output from machine.
   ps -eZ | egrep 'nfs|rpc'
 ```
 
-Similarly, NFS configuration and functional files already have proper SELinux contexts in place and therefore, they need no modifications. For instance, the cotext on the /etc/exports file is:
+Similarly, NFS configuration and functional files already have proper SELinux contexts in place and therefore, they need no modifications. For instance, the context on the /etc/exports file is:
+
+```
+ #need output from machine
+ ll -Z /etc/exports
+```
