@@ -92,6 +92,13 @@ These options govern the share access on the clients. Options must be enclosed w
 - async (sync) [sync] Replies to the client requests before changes made by previous requests are written to disk.
 - fsid Identifies the type of share eing exported. Options are device number, root or UUID. This option applies to file system shares only.
 - mp Exports only if the specified share is a file system.
-- root_squash (no_root_squash)
+- root_squash (no_root_squash) Prevents the root user on the client from gaining super access on mounted shares by mapping root to an unprivileged user account called nfsnobody with UID 65534.
+- rw (ro)[ro] - Allows access only on clients using ports lower than 1024.
+- sec [sec=sys] - Limits the share export to clients using one of these security methods: sys, krb5, krb5i, or krb5p. The sys option uses local UIDs and GIDs and the rest use Kerberos for user authentication, krb5 plus integrity check and krb5i plus data encryption, respectively.
+- secure / insecure [secure] allows access only on clients using ports lower than 1024.
+- subtree_check (no_subtree_check) [no_subtree_check] - Enables permission checks on higher-level directories of a share.
+- wdelay (no_wdelay) [wdelay] - Delays data writes to a share if it expects the arrival of another write request to the same share soon thereby reducing the number of times the actual writes to share must be made.
+
+
 
 ##
