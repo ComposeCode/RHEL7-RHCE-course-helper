@@ -105,3 +105,14 @@ Here is an example of an export:
 /export2 client4.example.com(rW) 192.168.1.20(no_root_suash) 192.168.0.0/24
 
 ### SELinux requirements for NFS Operation
+
+SELinux protects systems by setting appropriate controls using contexts and booleans. By default the SELinux policy allows NFS to export shares on the network without making any changes to either the file contexts or booleans. All NFS daemons are confined by default and are labeled with appropriate domain types. For instance, the nfsd process is labeled with the kernel_t type, rpc bind is labeled with the rpcbind_t type, rpc.mountd is labeled with the nfsd_t type etc.
+
+To get this information, run the command:
+
+```
+  need output from machine.
+  ps -eZ | egrep 'nfs|rpc'
+```
+
+Similarly, NFS configuration and functional files already have proper SELinux contexts in place and therefore, they need no modifications. For instance, the cotext on the /etc/exports file is:
