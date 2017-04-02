@@ -18,4 +18,15 @@ This chapter will cover Samba: We will look at the Samba daemons, commands and c
 
 - Samba shares can be accessed on Windows as well as Unix/Linus Systems.
 - Windows shares can be accessed and mounted on Linux.
-- 
+- Linux and Windows domain user credentials can be used interchangeably on either platform for authentication and authorization.
+- Samba server:
+  - Act as a print server for Windows systems.
+  - Be configured as a Primary domain Controller (PDC) and as a Backup Domain Controller (BDC) for a Samba based PDC.
+  - Be set up as an Active Directory member server on a Windows network.
+  - Provide Windows Internet Name Service (WINS) name resolution.
+
+### Samba Daemon
+
+
+
+### Samba Commands
