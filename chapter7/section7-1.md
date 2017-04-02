@@ -131,4 +131,19 @@ The SELinux policy includes numerous booleans that may be of interest from an NF
   getsebool -a | egrep '^nfs|^use_nfs'
 ```
 
-The output lists four booleans: 
+The output lists four booleans:
+  - nfs_export_all_ro (Allows/disallows share exports in read-only mode)
+  - nfs_export_all_rw (Allows/disallows share exports in read/write mode)
+  - nfsd_anon_write (Allows/disallows the nfsd daemon to write anonymously to public directories on clients)
+  - use_nfs_home_dirs (Allows/disallows NFS clients to mount user home directories)
+
+### NFS Client Options
+
+Once a shared is exported, the client can then mount the share using the mount command. This command supports several options, which are descrbed below:
+
+- 
+-
+-
+-
+-
+-
