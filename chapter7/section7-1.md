@@ -144,5 +144,16 @@ Once a shared is exported, the client can then mount the share using the mount c
 - async (sync) [async] Causes the I/O to happen asynchronously.
 - defaults Select the following default options automatically: rw, suid, dev, exec, auto, nouser, async
 - exec / no exec [exec] Allows the execution of binaries.
-- fg /bg [fg] 
--
+- fg /bg [fg] Use fg (foreground) for shares that must be available to the client to boot successfully or operate properly. If a foreground mount fails, it is retried for retry minutes in the foreground until it either succeeds or times out. With background (bg), the mount attempts are tried repeatedly for retry minutes in the background without hampering the system boot process or hanging the client.
+- hard / soft The hard/soft option the client tries repeatedly to mount a share until either it succeeds or times out. With the soft option, if a client attempts to mount a share for trans times unsuccessfully, an error message is displayed.
+- _netdev: mounts a share only after the networking has been started.
+- nfsvers - Specifies the NFS version to be used.
+- remount - attempts to remount an already mounted share with perhaps, different options.
+- retrans=n [3] The client retransmits read or write request for n times after the first transmission times out. If the request does not succeed after the n retransmissions have completed, a soft mount displays an error message and a hard mount continues to retry.
+- retry= [2 minutes for fg or 10,000 minutes for bg] - Tries to mount a share for the specified amount of times before giving up.
+- rsize=n [negotiated] - Specifies the size or each read request.
+- rw / ro [rw]  - rw allows file modifications and ro prevents file modifications.
+- sec=mode [sys] -  Specifies the type of security to be used. The default uses local UIDS and GIDs, additional choices are krb5, krb5i, krb5p, and they use Kerberos for user authentication, krb5 plus integrity check and krb5i plus data encryption, respectively.
+- suid/nosuid [suid] - Allows users to run setuid and setgid programs.
+- timeo=n [600] Sets a wait timeout, in tenths of a second, for NFS read and write requests to be responded before it retries again for retrans times. When the number of retrans attempts have been made, a soft mound displays an error message while a hard mount continues to retry.
+- wsize=n [negotiated] - Specifies the size of each write request. 
