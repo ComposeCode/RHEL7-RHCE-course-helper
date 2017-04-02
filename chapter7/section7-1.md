@@ -139,11 +139,10 @@ The output lists four booleans:
 
 ### NFS Client Options
 
-Once a shared is exported, the client can then mount the share using the mount command. This command supports several options, which are descrbed below:
-
-- 
--
--
+Once a shared is exported, the client can then mount the share using the mount command. This command supports several options, which are described below:
+- ac (noac) [ac] Specifies whether to cache file attributes for better performance.
+- async (sync) [async] Causes the I/O to happen asynchronously.
+- defaults Select the following 
 -
 -
 -
