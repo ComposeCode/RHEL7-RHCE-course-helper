@@ -121,3 +121,5 @@ Similarly, NFS configuration and functional files already have proper SELinux co
  #need output from machine
  ll -Z /etc/exports
 ```
+
+However, any directory or file system that you want to export on the network for sharing purposes will need to have either public_content_ro_t or public_content_rw_t SELinux type applied. This is only required if more than one file-sharing servce, such as any ocmbination of NFS, 
