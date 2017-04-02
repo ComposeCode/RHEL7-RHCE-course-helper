@@ -156,4 +156,34 @@ Once a shared is exported, the client can then mount the share using the mount c
 - sec=mode [sys] -  Specifies the type of security to be used. The default uses local UIDS and GIDs, additional choices are krb5, krb5i, krb5p, and they use Kerberos for user authentication, krb5 plus integrity check and krb5i plus data encryption, respectively.
 - suid/nosuid [suid] - Allows users to run setuid and setgid programs.
 - timeo=n [600] Sets a wait timeout, in tenths of a second, for NFS read and write requests to be responded before it retries again for retrans times. When the number of retrans attempts have been made, a soft mound displays an error message while a hard mount continues to retry.
-- wsize=n [negotiated] - Specifies the size of each write request. 
+- wsize=n [negotiated] - Specifies the size of each write request.
+
+### Monitoring NFS Activities
+
+- Monitoring NFS activities typically involves capturing and displaying read and write statistics on both the NFS server and NFS Client. To do this, tools such as nfsstat, nfsiostat and mountstats are available and may be used for this purpose. The details that these tools provide require an in-depth understanding of various fields and parameters that are depicted in the output. The following presents only a high-level introduction of these tools.
+
+The nfsstat command can be run on both the NFS server and client to produce NFS and RPC I/O statistics. It can be used to display server (-s), client (-c), NFS (-n) and RPC (-r) statistics. With both the -m option, it shows all activities on mounted shares, without any options, it exhibits, both NFS and RPC statistics.
+
+```
+  # Need output from nfsstat on server
+  nfsstat
+```
+
+```
+  # Need output from nfsstat on client
+  nfsstat
+```
+
+The nfsiostat command is an NFS client-side utility that produced read and write statistics for each mounted share by consulting the /proc/self/mountstats file. You can specify a time interval and a count of iterations for the execution of this command.
+
+```
+  # Need output of nfsiostat on the client
+  nfsiostat
+```
+
+The mountstats command also consults the /proc/self/mountstats file and displays the NFS read and write statistics for the specified mount share. You can specify the --nfs or --rpc option with the command to restrict it to display NFS or RPC statistics
+
+```
+ # Need to run mountstats command on the nfs server
+  mountstats /somemount
+```
