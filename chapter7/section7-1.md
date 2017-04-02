@@ -142,7 +142,7 @@ The output lists four booleans:
 Once a shared is exported, the client can then mount the share using the mount command. This command supports several options, which are described below:
 - ac (noac) [ac] Specifies whether to cache file attributes for better performance.
 - async (sync) [async] Causes the I/O to happen asynchronously.
-- defaults Select the following 
--
--
+- defaults Select the following default options automatically: rw, suid, dev, exec, auto, nouser, async
+- exec / no exec [exec] Allows the execution of binaries.
+- fg /bg [fg] 
 -
