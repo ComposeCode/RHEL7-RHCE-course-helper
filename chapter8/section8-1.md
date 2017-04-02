@@ -27,6 +27,6 @@ This chapter will cover Samba: We will look at the Samba daemons, commands and c
 
 ### Samba Daemon
 
-
+Samba and CIFS are client/server protocols that employ the smbd daemon on the server to share and manage directories and file systems. This daemon process uses TCP port 445 for operation and it is also responsible for share locking and user authentication.
 
 ### Samba Commands
