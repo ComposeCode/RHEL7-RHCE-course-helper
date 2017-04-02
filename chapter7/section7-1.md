@@ -104,4 +104,4 @@ Here is an example of an export:
 /export1 client1 client2 client3.example.com(rw,insecure)
 /export2 client4.example.com(rW) 192.168.1.20(no_root_suash) 192.168.0.0/24
 
-### Configuring NFS Server and Client 
+### SELinux requirements for NFS Operation
