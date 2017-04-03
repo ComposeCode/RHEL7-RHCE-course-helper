@@ -80,4 +80,27 @@ SELinux contexts: the Samba daemon is confined by default and is labelled approp
 
 Similarly, Samba configuration and functional files already have proper SELinux contexts in place; therefore, need no modifications.
 
-- However, any directory or file system that you want to share on the network with Samba alone needs to have samba_share_t type applied to it. In case of multiple file-sharing, such as combination of CIFS, and NFS, CIFS and FTP or NFS and FTP, sharing the same directory or file system, you wil need to use either the public_content_ro_t or public_content_rw_t type instead. 
+- However, any directory or file system that you want to share on the network with Samba alone needs to have samba_share_t type applied to it. In case of multiple file-sharing, such as combination of CIFS, and NFS, CIFS and FTP or NFS and FTP, sharing the same directory or file system, you wil need to use either the public_content_ro_t or public_content_rw_t type instead.
+
+- The SELinux policy includes numerous booleans that may be of interest from a Samba operation standpoint. These booleans need a careful review to see which ones might require a toggle for Samba to operate well. Most booleans related to a specific service. A special boolean, called samba_sharE_nfs is enabled in csae the same directory or file system is shared with both NFS and CIFS.
+
+To list the Samba related booleans, run the following command to list the samba booleans:
+
+```
+  # need output from server
+  getsebool -a | egrep 'samba|smb|cifs'
+```
+
+Here are some key booleans:
+
+- ftpd_use_cifs: Allows/disallows a mounted samba share to be used as a public file transfer location by the FTP service.
+- httpd_use_cifs: Allows/disallows a mounted Samba share to be used by the apache service.
+- samba_create_home_dirs: Allows/disallows Samba to create home directories
+- samba_enable_home_dirs: Allows/disabllows Samba to share user home directories
+- samba_export_all_ro: allows/disallows Samba to share in read-only mode.
+- samba_export_all_rw: Allows/disallows samba to share in read/write mode.
+- smbd_anon_Write: Allows/disallows samba to write to public directories with public_content_rw_t type.
+- use_samba_home_dirs: Allows/disallows Samba clients to mount user home directories.
+
+
+### Exercises. 
