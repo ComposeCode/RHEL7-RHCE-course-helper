@@ -78,4 +78,6 @@ SELinux contexts: the Samba daemon is confined by default and is labelled approp
   ps -eZ | grep smbd
 ```
 
-Similarly, Samba configuration and functional files already have proper SELinux contexts in place; therefore, need no modifications. 
+Similarly, Samba configuration and functional files already have proper SELinux contexts in place; therefore, need no modifications.
+
+- However, any directory or file system that you want to share on the network with Samba alone needs to have samba_share_t type applied to it. In case of multiple file-sharing, such as combination of CIFS, and NFS, CIFS and FTP or NFS and FTP, sharing the same directory or file system, you wil need to use either the public_content_ro_t or public_content_rw_t type instead. 
