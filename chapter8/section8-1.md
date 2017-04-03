@@ -50,3 +50,9 @@ Samba uses several configuraiton files at startup and during it separation, thes
 - /etc/sysconfig/samba: Contains directives used at Samba startup. Stores Samba startup configuration.
 - /var/lib/samba/private/smbpasswd: Maintains Samba user passwords. This file is usd for authentication purposes.
 - /var/log/samba: Directory location for Samba logs.
+
+- The smb.conf is the primary configuration file for setting up a samba server. You specify share definitions and set parameter vlues to modify their behavior. This file has two major sections: Global Settings and Share definitions.
+
+- Global settings: defines the directives that affect the verall samba server behavior and includes options for networking, logging, standalone server, domain members, domain controller, browser control, name resolution, printing, and file systems.
+
+- Share definitions sets share-specific directives for home and custom shares. Most settings in the global section are applied to all other sections in the file provided the other sections do not have them defined explicitly. 
