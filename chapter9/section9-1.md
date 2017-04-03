@@ -50,11 +50,11 @@ the output also indicates the presence of three directories: /var/log/httpd, /us
 
 The httpd.conf file contains numerous directives that can be set as per requirements. Here are the general directives that affect the overall operation of the Apache Web Server:
 
-- Group: 
-- Include:
-- Listen:
-- ServerRoot:
-- User:
+- Group: Default is apache, Specifies the owning group for the httpd daemon.
+- Include: Default is the conf.modules.d/*.conf with respect to ServerRoot. Specifies the locaiton of module configuration files to be loaded at Apache startup.
+- Listen: Default is 80. Specifies a port number to listen for client requests. Specify an IP address and a port if you wish to limit the web server access to a specific address.
+- ServerRoot: Default is /etc/httpd. Directory location to store configuration, error and log files.
+- User: Default is apache. Specifies the owner for the httpd daemon. 
 
 ## Apache Log Files
 ##
