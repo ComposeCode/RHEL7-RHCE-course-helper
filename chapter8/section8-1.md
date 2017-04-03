@@ -55,4 +55,25 @@ Samba uses several configuraiton files at startup and during it separation, thes
 
 - Global settings: defines the directives that affect the verall samba server behavior and includes options for networking, logging, standalone server, domain members, domain controller, browser control, name resolution, printing, and file systems.
 
-- Share definitions sets share-specific directives for home and custom shares. Most settings in the global section are applied to all other sections in the file provided the other sections do not have them defined explicitly. 
+- Share definitions sets share-specific directives for home and custom shares. Most settings in the global section are applied to all other sections in the file provided the other sections do not have them defined explicitly.
+
+```
+  # Need listing of directives form a server and a listing of each one.
+```
+
+### Samba Software Packages
+
+The samba packages are: samba, samba-common, samba-libs, cifs-utils, samba-client.
+
+The server side requires: samba, samba-common, samba-libs (cifs-utils is optional).
+
+The client side requires: cifs-utils and samba-client.
+
+### Configuring Samba Server and Client
+
+SELinux contexts: the Samba daemon is confined by default and is labelled appropriately with smbd_t domain type. This information can be verified through:
+
+```
+  # need output from machine
+  ps -eZ | grep smbd
+```
