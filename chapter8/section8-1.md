@@ -30,3 +30,23 @@ This chapter will cover Samba: We will look at the Samba daemons, commands and c
 Samba and CIFS are client/server protocols that employ the smbd daemon on the server to share and manage directories and file systems. This daemon process uses TCP port 445 for operation and it is also responsible for share locking and user authentication.
 
 ### Samba Commands
+
+There are numerous commands available to establish and manage samba functionality on the server and client:
+
+- mount: Mounts a Samba share specified at the command line or listed in the /etc/fstab file. it adds an entry for the mounted share to the client's /et/cmtab file and can be used to display mounted shares listed in the file.
+- mount.cifs: Mounts a Samba share on the client.
+- pdbedit: Maintains a local user database in the /var/lib/samba/private/smb/passwd file on the server.
+- smbclient: Connects to a samba share to perform FTP-like operations.
+- smbpasswd: Changes Samba user passwords.
+- testparam: Tests the syntax of the smb.conf file.
+- umount: Functions opposite to that of the mount command.
+
+### Samba Configuration and Functional Files.
+
+Samba uses several configuraiton files at startup and during it separation, these files include those that store configuration data and logs:
+
+- /etc/samba/smb.conf: Samba server configuration file.
+- /etc/samba/smbusers: Maintains Samba and Linux user mappings.
+- /etc/sysconfig/samba: Contains directives used at Samba startup. Stores Samba startup configuration.
+- /var/lib/samba/private/smbpasswd: Maintains Samba user passwords. This file is usd for authentication purposes.
+- /var/log/samba: Directory location for Samba logs.
