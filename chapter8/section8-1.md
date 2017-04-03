@@ -77,3 +77,5 @@ SELinux contexts: the Samba daemon is confined by default and is labelled approp
   # need output from machine
   ps -eZ | grep smbd
 ```
+
+Similarly, Samba configuration and functional files already have proper SELinux contexts in place; therefore, need no modifications. 
