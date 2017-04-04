@@ -67,7 +67,17 @@ There are several directives defined under "Main server configuration" in the fi
 - DocumentRoot: Default is /var/www/html. Specifies the directory location for website files.
 - ErrorLog: Default is logs/error_log with respect to ServerRoot. Specifies the location to log error messages.
 - IncludeOptional: Default is conf.d/*.conf with respect to ServerRoot. Specifies the location of additional configuration files to be processed at Apache startup.
-- LogFormat: sets the format for logging messages. 
+- LogFormat: sets the format for logging messages.
+- LogLevel: Default is warn. Specifies the log error level (debug, notice, error, crit, info, etc)
+- Options: Default is FollowSymLinks. Sets features associated with web directories. Some common features are: ExecCGI (allows the execution of CGI scripts), FollowSymLinks (allows directories external to DocumentRoot to have symlinks), Indexes (Displays a list of files on the web server if no index.html is present), Includes (allows server-side includes), multiviews (allows substitution of file extensions), all (allows all options besides multiviews), None (disables all extra features).
+
+## Main Server Directives
+
+A There are four main contains in the httpd.conf file:
+- <Directory></Directory>
+- <Files></Files>
+- <IfModule></IfModule>
+- <VirtualHost></VirtualHost>
 
 ## Apache Log Files
 ##
