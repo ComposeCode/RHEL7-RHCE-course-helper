@@ -58,7 +58,9 @@ The httpd.conf file contains numerous directives that can be set as per requirem
 
 There are several directives defined under "Main server configuration" in the file. These directives set up the default web server, which responds to client requests that are not handled by virtual hosts. The values of these directives are also valid for any configured virtual hosts, unless they are overridden:
 
-- 
+- AddHandler: Maps a file extension to the specified handler.
+- AccessedFileName: default is .htaccess, specifies the file to be used for access control information. See AllowOverride and Require directives.
+- Alias: Defines a directory ocation to store files outside of DocumentRoot
 
 ## Apache Log Files
 ##
