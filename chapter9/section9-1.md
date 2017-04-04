@@ -56,7 +56,9 @@ The httpd.conf file contains numerous directives that can be set as per requirem
 - ServerRoot: Default is /etc/httpd. Directory location to store configuration, error and log files.
 - User: Default is apache. Specifies the owner for the httpd daemon.
 
-There are several directives defined under "Main server configuration" in the file. These directives
+There are several directives defined under "Main server configuration" in the file. These directives set up the default web server, which responds to client requests that are not handled by virtual hosts. The values of these directives are also valid for any configured virtual hosts, unless they are overridden:
+
+- 
 
 ## Apache Log Files
 ##
