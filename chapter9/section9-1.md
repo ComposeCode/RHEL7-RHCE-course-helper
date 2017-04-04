@@ -99,8 +99,11 @@ A There are four main contains in the httpd.conf file:
 
 Users can be assigned passwords that may be different to their RHEL passwords, the key directives to control access at user and group levels are described below:
 - AuthType: Sets basic authentication.
-- AuthhName: adds general comments. 
--
+- AuthhName: adds general comments.
+- AuthBasicProvider Default is file. Specifies the type of authentication to be used.
+- AuthUserFile: specifies the file that contains authorized user passwords.
+- AuthGroupFile: specifies the file that contains authorized gorup passwords.
+- Require: 
 
 
 ### Exercises.
