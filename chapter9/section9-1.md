@@ -61,12 +61,13 @@ There are several directives defined under "Main server configuration" in the fi
 - AddHandler: Maps a file extension to the specified handler.
 - AccessedFileName: default is .htaccess, specifies the file to be used for access control information. See AllowOverride and Require directives.
 - Alias: Defines a directory ocation to store files outside of DocumentRoot
-- AllowOverride: 
--
--
--
--
--
+- AllowOverride: Default is none. Defines types of directives that can be defined in AccessFileName files. These directives are used to control user or group accesss to private directories, as well as to control host access. some other common options are: All (allows the use of all AccessfileName-supported directives), AuthConfig (allows the use of authorization directives, such as AuthName, AuthType, AuthUserFile, AuthGroupFile, and require in AccessFileName).
+- CustomLog: Defaut is combined and stored in logs/httpd/acess_log with respect to ServerRoot. Specifies the custom log file and identifies its format.
+- DirectoryIndex: Default is inde.html. Specifies the web page to be served when a client requests an index of a directory.
+- DocumentRoot: Default is /var/www/html. Specifies the directory location for website files.
+- ErrorLog: Default is logs/error_log with respect to ServerRoot. Specifies the location to log error messages.
+- IncludeOptional: Default is conf.d/*.conf with respect to ServerRoot. Specifies the location of additional configuration files to be processed at Apache startup.
+- LogFormat: sets the format for logging messages. 
 
 ## Apache Log Files
 ##
