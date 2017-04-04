@@ -122,7 +122,7 @@ The apache web server can be configured to limit access from specific hosts, net
 
 An example below:
 
-This example allows user1, user2 and dba gorup members to access the contents of /var/www/example with no password authentication required: 
+This example allows user1, user2 and dba gorup members to access the contents of /var/www/example with no password authentication required:
 
 <Directory /var/www/example>
   AllowOverride None
@@ -131,5 +131,17 @@ This example allows user1, user2 and dba gorup members to access the contents of
 </Directory>
 
 Example 2:
+
+To allow user1, user2 and dba group members to access the contents of /var/www/example from domain example.net, network 192.168.0 and host server2.eample.com and disallow access from domain example.org. No password authentication is required.
+
+<Directory /var/www/example>
+  AllowOverride None
+  Require user user1 user2
+  Require group dba
+  Require host example.net server2.example.com
+  Require ip 192.168.0
+  Require not host example.org
+</Directory>
+
 
 ### Exercises.
