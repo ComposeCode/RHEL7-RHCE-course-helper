@@ -105,6 +105,31 @@ Users can be assigned passwords that may be different to their RHEL passwords, t
 - AuthGroupFile: specifies the file that contains authorized gorup passwords.
 - Require: see below.
 
+The apache web server can be configured to limit access from specific hosts, network or domains. The require directive is used to specify these options:
+- Require user: <username or UID> access is granted to the specified user only (used to grant access to private directories).
+- Require not user <username or UID> access is denied to the specified user.
+- Require Group <group name or GID> access is granted to the specified group members only (used to grant access to group-managed contents)
+- Require not group <group name or GID> access is denied to members of the specified group.
+- Require valid-user Access is granted to all valid users.
+- Require ip 192.168.0. 15.2 Access is granted from 192.168.0 and 15.2 networks only.
+- Require not ip 192.168.0 15.2 Access is denied from 192.168.0 and 15.2 networks.
+- Require host server2 Access is granted from server2.
+- Require not host server2 Access is denied from server2.
+- Require host example.com Access is granted from example.com domain.
+- Require not host .example.com Access is denied from example.com domain.
+- Require all granted Access is granted from everywhere.
+- Require all denied Access is denied from everywhere.
 
+An example below:
+
+This example allows user1, user2 and dba gorup members to access the contents of /var/www/example with no password authentication required: 
+
+<Directory /var/www/example>
+  AllowOverride None
+  Require user user1 user2
+  Require group dba
+</Directory>
+
+Example 2:
 
 ### Exercises.
