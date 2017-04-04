@@ -61,6 +61,12 @@ There are several directives defined under "Main server configuration" in the fi
 - AddHandler: Maps a file extension to the specified handler.
 - AccessedFileName: default is .htaccess, specifies the file to be used for access control information. See AllowOverride and Require directives.
 - Alias: Defines a directory ocation to store files outside of DocumentRoot
+- AllowOverride: 
+-
+-
+-
+-
+-
 
 ## Apache Log Files
 ##
