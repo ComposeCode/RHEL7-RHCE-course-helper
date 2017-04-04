@@ -103,7 +103,8 @@ Users can be assigned passwords that may be different to their RHEL passwords, t
 - AuthBasicProvider Default is file. Specifies the type of authentication to be used.
 - AuthUserFile: specifies the file that contains authorized user passwords.
 - AuthGroupFile: specifies the file that contains authorized gorup passwords.
-- Require: 
+- Require: see below.
+
 
 
 ### Exercises.
