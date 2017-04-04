@@ -80,6 +80,15 @@ A There are four main contains in the httpd.conf file:
 - <VirtualHost></VirtualHost>
 
 ## Apache Log Files
+
+- Apache Log files are located in /var/log/httpd directory, which is symbolically linked from /etc/httpd/logs.
+
+```
+  # Need server output for log files.
+```
+
+
+
 ##
 
 ### Exercises.
