@@ -93,6 +93,14 @@ A There are four main contains in the httpd.conf file:
 
 ## Access Control
 
-- Controlling Access for Users and Groups: 
+## Controlling Access for Users and Groups:
+
+- Limiting access to private directories is done through the .htaccess file or directly in the directory container in the httpd.conf file.
+
+Users can be assigned passwords that may be different to their RHEL passwords, the key directives to control access at user and group levels are described below:
+- AuthType: Sets basic authentication.
+- AuthhName: adds general comments. 
+-
+
 
 ### Exercises.
