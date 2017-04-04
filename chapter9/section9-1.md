@@ -143,5 +143,26 @@ To allow user1, user2 and dba group members to access the contents of /var/www/e
   Require not host example.org
 </Directory>
 
+Example 3:
+
+To allow user1, user2 and dba group members to access the contents of /var/www/example from domain example.net, network 192.168.0 and host server2.example.com and disallow access from domain example.org. Both users and group members must enter their passwords to access the following directory contents:
+
+<Directory /var/www/example>
+  AllowOverride AuthConfig
+  AccessFileName conf/.htaccess
+</Directory>
+
+The .htaccess file:
+
+  AuthType  Basic
+  AuthName  "This site is password protected."
+  AuthBasicProvider file
+  AuthUserFile  /etc/httpd/conf/.userdb
+  AuthGroupFile
+  Require
+  Require
+  Require
+  Require
+  Require
 
 ### Exercises.
