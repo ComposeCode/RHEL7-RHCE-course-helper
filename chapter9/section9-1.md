@@ -186,4 +186,8 @@ The proper SELinux contexts must be set on apache files and directories, this is
   ll -Zd /var/log/httpd
 ```
 
+### Understanding and Configuring Apache Virtual Hosts
+
+
+
 ### Exercises.
