@@ -163,6 +163,10 @@ The .htaccess file:
   Require group dba
   Require host example.net server2.example.com
   Require ip 192.168.0
-  Require not host example.org 
+  Require not host example.org
+
+## Configuring Apache Servers
+
+SELinux requirements for Apache Operation: 
 
 ### Exercises.
