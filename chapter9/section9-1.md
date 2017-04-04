@@ -188,6 +188,6 @@ The proper SELinux contexts must be set on apache files and directories, this is
 
 ### Understanding and Configuring Apache Virtual Hosts
 
-
+- Apache allows us to run multiple virtual hosts on a single system for shared hosting of several distinct websites. 
 
 ### Exercises.
