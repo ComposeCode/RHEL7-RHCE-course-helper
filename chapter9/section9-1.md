@@ -170,15 +170,20 @@ The .htaccess file:
 SELinux requirements for Apache Operation:
 
 - httpd_anon_write: Allows/disallows Apache to write to directories labeled with the public_content_rw_t type, such as public directories.
-- httpd_sys_script_anon_write: Allows/disallows Apache scripts to write to directories labeled with the public_content_rw_t type, such as public directories 
-- httpd_enable_cgi:
-- httpd_enable_ftp_server:
-- httpd_enable_homedirs:
-- httpd_use_cifs:
-- httpd_use_nfs:
+- httpd_sys_script_anon_write: Allows/disallows Apache scripts to write to directories labeled with the public_content_rw_t type, such as public directories
+- httpd_enable_cgi: Enables/disables execution of CGI scripts labeled with the httpd_sys_script_exec_t type.
+- httpd_enable_ftp_server: Allows/disallows Apache to act as a FTP server and listen on port 21.
+- httpd_enable_homedirs: Enables/disables Apache's access to user home directories.
+- httpd_use_cifs: Allows/disallows Apache to use moutned Samba shares with cifs_t type.
+- httpd_use_nfs: Allows/disallows Apache to use mounted NFS shares with nfs_t type.
+
+The proper SELinux contexts must be set on apache files and directories, this is mandatory. There are three key directories: /etc/httpd, /var/www and /var/log/httpd.
 
 ```
   # need to run commands on server
+  ll -Zd /etc/httpd
+  ll -Zd /var/www
+  ll -Zd /var/log/httpd
 ```
 
 ### Exercises.
