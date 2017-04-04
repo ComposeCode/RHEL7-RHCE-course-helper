@@ -87,8 +87,12 @@ A There are four main contains in the httpd.conf file:
   # Need server output for log files.
 ```
 
+## Apache Software Packages
 
+- The apache software packages are: httpd, httpd-tools.
 
-##
+## Access Control
+
+- Controlling Access for Users and Groups: 
 
 ### Exercises.
