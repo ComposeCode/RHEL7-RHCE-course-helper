@@ -158,11 +158,11 @@ The .htaccess file:
   AuthName  "This site is password protected."
   AuthBasicProvider file
   AuthUserFile  /etc/httpd/conf/.userdb
-  AuthGroupFile
-  Require
-  Require
-  Require
-  Require
-  Require
+  AuthGroupFile /etc/httpd/conf/.groupdb
+  Require user user1 user2
+  Require group dba
+  Require host example.net server2.example.com
+  Require ip 192.168.0
+  Require not host example.org 
 
 ### Exercises.
