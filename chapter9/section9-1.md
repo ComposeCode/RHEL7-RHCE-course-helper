@@ -167,6 +167,18 @@ The .htaccess file:
 
 ## Configuring Apache Servers
 
-SELinux requirements for Apache Operation: 
+SELinux requirements for Apache Operation:
+
+- httpd_anon_write: Allows/disallows Apache to write to directories labeled with the public_content_rw_t type, such as public directories.
+- httpd_sys_script_anon_write: Allows/disallows Apache scripts to write to directories labeled with the public_content_rw_t type, such as public directories 
+- httpd_enable_cgi:
+- httpd_enable_ftp_server:
+- httpd_enable_homedirs:
+- httpd_use_cifs:
+- httpd_use_nfs:
+
+```
+  # need to run commands on server
+```
 
 ### Exercises.
