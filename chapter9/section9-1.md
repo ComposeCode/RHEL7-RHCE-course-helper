@@ -208,5 +208,14 @@ Here is an example container:
   </VirtualHost>
 ```
 
+These files look very similar to the previous examples above. Virtual host configuration files can be checked for syntax errors with the httpd command as follows:
+
+```
+  # Need output from server
+  httpd -D DUMP_VHOSTS
+```
+
+### 
+
 
 ### Exercises.
