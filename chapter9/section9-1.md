@@ -188,6 +188,25 @@ The proper SELinux contexts must be set on apache files and directories, this is
 
 ### Understanding and Configuring Apache Virtual Hosts
 
-- Apache allows us to run multiple virtual hosts on a single system for shared hosting of several distinct websites. This technique 
+- Apache allows us to run multiple virtual hosts on a single system for shared hosting of several distinct websites. This technique offers a low-cost hosting solution for customers. Each hosted website can either share a common IP address or be configured with a unique IP. Both mechanisms direct the inbound web traffic to the appropriate virtual host.
+
+## Virtual Host Configuration File
+
+- The primary configuration file for defining virtual hosts is httpd.conf, however it is better to have separate files in /etc/httpd/conf.d directory instead.
+
+- Common directive used within a virtual host container are ServerAdmin, ServerName, DocumentRoot, ErrorLog, CustomerLog.
+
+Here is an example container:
+
+```
+  <VirtualHost *:80>
+    DocumentRoot /var/www/html/somehost.com
+    ServerAdmin admin@somehost.com
+    ServerName somehost.com
+    ErrorLog logs/somehost.com-error_log
+    CustomLog logs/somehost.com-access_log common
+  </VirtualHost>
+```
+
 
 ### Exercises.
