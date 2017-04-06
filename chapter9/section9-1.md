@@ -219,6 +219,32 @@ These files look very similar to the previous examples above. Virtual host confi
 
 - Apache web Servers can be configured to use SSL/TLS. These use digital identify certificates in order to prove its authenticity to clients when they attempt to form a connection and establish a two-way encrypted communication channel for exchange of data. A trusted digital identify certificate is signed and issued by a certificate authority (CA). To obtain one, the applicant generates a private/public encryption key pair and a certificate signing request (CSR) for the desired sever. The CSR contains applicant identity, such as company details and contact information, as well as the public key and the hostname of the system. The CSR is encoded before it is transmitted to the CA. The CA reviews the CSR and issues and issues a signed certificate after validating the data provided in the CSR.
 
-- The alternative is to use self-siged certificates, which are created on the local system. 
+- The alternative is to use self-singed certificates, which are created on the local system.
+
+### HTTPS/SSL Software Packages
+
+- There are two software packages required to use HTTPs with Apache, these are: mod_ssl and openssl.
+
+- The installation of mod_ssl installs the ssl.conf file in /etc/httpd/conf.d, which is the config file for setting up a secure Apache server. The openssl package loads the openssl command and a diectory tre with some templates under /etc/pki.
+
+```
+  # need output from server
+  yum install mod_ssl openssl openssl-libs -y
+```
+
+### The OpenSSL Toolkit
+
+- The openssl toolkit offers a variety of subcommands to create and manage encryption keys, CSRs and digital certificates. Test HTTPS server and client connections etc. The openssl package offers an interactive mode with a prompt allowing us to subcommands directly from the prompt. There are 110 subcommands which are divided into three sets: standard, cipher (encoding and ecnryption) and message digest (detection of and protection against data corruption).
+
+```
+  # openssl list-standard-commands
+  # openssl list-cipher-commands
+  # openssl list-message-digest-commands
+```
+
+### The OpenSSL Configuration File
+
+By default, the SSL configuration file, ssl.conf is stored in the /etc/httpd/conf.d directory. This file is processed after the httpd.conf file completes its processing at Apache Service startup or reload. 
+
 
 ### Exercises.
