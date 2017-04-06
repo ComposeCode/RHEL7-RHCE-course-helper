@@ -252,6 +252,23 @@ This file sets directives necessary to run secure web servers. It is divided int
   # Need SSL VirtualHost listening from server
 ```
 
-The start of the directive indicates an IP address (IP address or *). The next five directives: DocumentRoot, ServerName, ErrorLog, TransferLog, LevelLog and CustomLog directive before the end of the file, have the same meaning as those used in httpd.conf. The next three directives, SSLProtocol, SSLCertificateFile and SSLCertificateKeyFile, specify the SSL version to use, the location of the SSL certificate and the location of the SSL Key. 
+The start of the directive indicates an IP address (IP address or *). The next five directives: DocumentRoot, ServerName, ErrorLog, TransferLog, LevelLog and CustomLog directive before the end of the file, have the same meaning as those used in httpd.conf. The next three directives, SSLProtocol, SSLCertificateFile and SSLCertificateKeyFile, specify the SSL version to use, the location of the SSL certificate and the location of the SSL Key.
+
+The Files and Directory sub-containers specify the file types containing dynamic contents and their location.
+
+### OpenSSL Log Files
+
+The OpenSSL Log files are located in the /var/log/httpd directory, which is sumbolically linked from /etc/httpd/logs directory. The ssl_access_log, ssL_ERROR_LOG and ssl_request_log.
+
+```
+  # needoutput from server
+  ll /var/log/httpd
+```
+
+- It is recomended to use separate log files for different websites.
+
+### Overview of CGI and CGI Scripts
+
+
 
 ### Exercises.
