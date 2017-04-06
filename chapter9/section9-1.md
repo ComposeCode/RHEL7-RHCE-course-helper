@@ -244,7 +244,14 @@ These files look very similar to the previous examples above. Virtual host confi
 
 ### The OpenSSL Configuration File
 
-By default, the SSL configuration file, ssl.conf is stored in the /etc/httpd/conf.d directory. This file is processed after the httpd.conf file completes its processing at Apache Service startup or reload. 
+By default, the SSL configuration file, ssl.conf is stored in the /etc/httpd/conf.d directory. This file is processed after the httpd.conf file completes its processing at Apache Service start up or reload.
 
+This file sets directives necessary to run secure web servers. It is divided into two sections: SSL Global Context and SSL Virtual Host Context. One directive which sets the listen port to 443 is at the top of the file:
+
+```
+  # Need SSL VirtualHost listening from server
+```
+
+The start of the directive indicates an IP address (IP address or *). The next five directives: DocumentRoot, ServerName, ErrorLog, TransferLog, LevelLog and CustomLog directive before the end of the file, have the same meaning as those used in httpd.conf. The next three directives, SSLProtocol, SSLCertificateFile and SSLCertificateKeyFile, specify the SSL version to use, the location of the SSL certificate and the location of the SSL Key. 
 
 ### Exercises.
