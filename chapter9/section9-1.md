@@ -217,6 +217,8 @@ These files look very similar to the previous examples above. Virtual host confi
 
 ### Understanding and Configuring Apache web Servers over SSL/TLS
 
-- Apache web Servers can be configured to use SSL/TLS. These use digital identify certificates in order to prove its authenticity to clients when they attempt to form a connection and establish a two-way encrypted communication channel for exchange of data. A trusted digital identify certificate is signed and issued by a certificate authority (CA). To obtain one, the applicant generates a private/public encryption key pair and a certificate signing request (CSR) for the desired sever. The CSR contains applicant identity, such as company details and contact information, as well as the public key and the hostname of the system. The CSR is encoded before it is transmitted to the CA. The CA reviews the CSR and issues and issues a signed certificate after validating the data provided in the CSR. 
+- Apache web Servers can be configured to use SSL/TLS. These use digital identify certificates in order to prove its authenticity to clients when they attempt to form a connection and establish a two-way encrypted communication channel for exchange of data. A trusted digital identify certificate is signed and issued by a certificate authority (CA). To obtain one, the applicant generates a private/public encryption key pair and a certificate signing request (CSR) for the desired sever. The CSR contains applicant identity, such as company details and contact information, as well as the public key and the hostname of the system. The CSR is encoded before it is transmitted to the CA. The CA reviews the CSR and issues and issues a signed certificate after validating the data provided in the CSR.
+
+- The alternative is to use self-siged certificates, which are created on the local system. 
 
 ### Exercises.
