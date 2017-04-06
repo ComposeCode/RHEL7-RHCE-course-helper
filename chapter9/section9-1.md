@@ -269,6 +269,12 @@ The OpenSSL Log files are located in the /var/log/httpd directory, which is sumb
 
 ### Overview of CGI and CGI Scripts
 
+- Apache allows us to run dynamic websites. For the RHCE, we will enable and use CGI Scripts (common gateway interface).
 
+- CGI Scripts may be written in Perl, Ruby, Python, C, shell or other programming languages.
+
+```
+  # need example of simple CGI scripts. 
+```
 
 ### Exercises.
