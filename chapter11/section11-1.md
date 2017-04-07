@@ -8,4 +8,16 @@ DNS is a tree-like distributed structure that is employed on the Internet and co
 
 ### What is BIND?
 
-Bind, Berkeley Internet Name Domain is an open source implementation of DNS on Unix. 
+Bind, Berkeley Internet Name Domain is an open source implementation of DNS on Unix/Linux operating systems. RHEL7 includes BIND as the standard DNS package.
+
+### DNS Name Space and Domains
+
+- The DNS Name space is a hierarchical organization of all the domains on the Internet. The root of the name space is represented by a dot. The hierarchy right below the root represents top-level domains (TLDs) that are either generic, such as .com, .net, .edu, .org and .gov, and referred to as gTLDs, or specific to two-letter country-code, such as .ca and uk and referred to as ccTLDs. A DNS domain is a collection of one or more systems.
+
+- Sub-domains fall under domains and are separated by a dot. For example, .com domain consists of a second-level domains, such as .redhat and .ibm, with further division into multiple, smaller, third-level domains, such as bugzilla.redhat.com under .redhat.com
+
+```
+  Need diagram of DNS hierarchy.
+```
+
+- 
