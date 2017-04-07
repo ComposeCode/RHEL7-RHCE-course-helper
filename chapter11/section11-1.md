@@ -35,3 +35,5 @@ The root servers sit at the top of the DNS hierarchy in the root zone and are ma
 ### DNS Roles
 
 - A role is a function that a system performs from a NDS standpoint, a system typically is configured to operate as one of three types of DNS server or as a client. A DNS server, also refered to as a nameserver, stores the DNS records for a domain and responds to client queries for name resolution.
+
+- 
