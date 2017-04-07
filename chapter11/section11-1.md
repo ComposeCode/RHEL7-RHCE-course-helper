@@ -27,5 +27,11 @@ Bind, Berkeley Internet Name Domain is an open source implementation of DNS on U
 The root servers sit at the top of the DNS hierarchy in the root zone and are managed and maintained by ICANN. There are currently 13 opterional root servers, with a number of mirrors for each one are placed across the globe to offload the main servers. Information about the root servers is supplied as part of the bind software and it is stored in the named.ca file in the /var/named directory.
 
 ```
-  need a list of the ROOT dns servers 
+  need a list of the ROOT dns servers
 ```
+
+- The root DNS servers handle queries for TLDs only and provide the client with the IP address of the name server that is responsible for a requested TLD.
+
+### DNS Roles
+
+- A role is a function that a system performs from a NDS standpoint, a system typically is configured to operate as one of three types of DNS server or as a client. A DNS server, also refered to as a nameserver, stores the DNS records for a domain and responds to client queries for name resolution.
