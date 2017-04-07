@@ -36,4 +36,16 @@ The root servers sit at the top of the DNS hierarchy in the root zone and are ma
 
 - A role is a function that a system performs from a NDS standpoint, a system typically is configured to operate as one of three types of DNS server or as a client. A DNS server, also refered to as a nameserver, stores the DNS records for a domain and responds to client queries for name resolution.
 
-- 
+- Primary DNS Server: a primary (aka master) DNS server has the authority over its domain (or sub-domain) and maintains that domain's original (or master) data. Each domain must have one primary server with one or more optional DNS servers, referred to as secondary and caching server. Zone data files are maintained on the primary server and they can be propagated to secondary servers.
+
+- Secondary DNS server: a secondary (aka slave) DNS server has the authority for its domain and stores that domain's zone data files; however, these files are copied over from the primary server. When updates are made to the zone files on the primary server, the second server gets a copy of the updated files automatically.
+
+- Caching DNS Server: a caching DNS server has no authority for any domains. It gets data from a primary or secondary server and caches it locally in the memory. Like a secondary server, a caching server is used for redundancy and load sharing, but its more common use is due to its ability to provide faster responses to queries as it stores data in the memory rather than on the disk.
+
+- Forwarding DNS Server: a forwarding DNS server has no authority for any domains. It simply forwards an incoming query to a specified DNS server.
+
+- DNS Client: a DNS Client is used for initiating and sequencing hostname queries by referencing name server information defined in resolver configuration files.
+
+ ### Types of Nameserver Configuration
+
+ 
