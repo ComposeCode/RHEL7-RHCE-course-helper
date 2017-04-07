@@ -20,4 +20,12 @@ Bind, Berkeley Internet Name Domain is an open source implementation of DNS on U
   Need diagram of DNS hierarchy.
 ```
 
-- 
+- Need to explain the DNS hierarchy (leaves, etc)
+
+### DNS Root Servers
+
+The root servers sit at the top of the DNS hierarchy in the root zone and are managed and maintained by ICANN. There are currently 13 opterional root servers, with a number of mirrors for each one are placed across the globe to offload the main servers. Information about the root servers is supplied as part of the bind software and it is stored in the named.ca file in the /var/named directory.
+
+```
+  need a list of the ROOT dns servers 
+```
