@@ -170,5 +170,10 @@ Below is a example named.conf file:
 
 ```
   // need output from file
-  
+  zone "localhost" IN {
+      type master;
+      file "named.localhost";
+      allow-update { none; }
+  };
+
 ```
