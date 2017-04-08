@@ -211,4 +211,6 @@ The default contents of the named.localhost zone file are shown below:
 
 ### DNS Message Logging
 
-- DNS messages and alerts are logged to /var/log/messages, as are 
+- DNS messages and alerts are logged to /var/log/messages, as are all messages related to stopping and starting the named service, zone loading and unloading, general information, warning messages, etc.
+
+### Configuring BIND server
