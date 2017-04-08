@@ -118,9 +118,11 @@ Below is a example named.conf file:
   // need named.conf file from server
   // sample is in /usr/share/doc/bind*/sample
   options {
-      listen-on   port 53 {127.0.0.1; 192.168.0.111;};
-      listen-on-v6 port 53 {::1; };
-      
+      listen-on       port 53 {127.0.0.1; 192.168.0.111;};
+      listen-on-v6    port 53 {::1; };
+      directory       "/var/named";
+      dump-file       "/var/named/data/cache_dump.db";
+       
   };
   logging {
     channel default_debug {
