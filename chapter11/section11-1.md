@@ -51,3 +51,9 @@ The root servers sit at the top of the DNS hierarchy in the root zone and are ma
 - There are two fundamental types of DNS server configurations referred to as authoritative and recursive. An authoritative DNS server is usually a primary or secondary server that provides authoritative responses to name resolution queries from its own zone data files.
 
 - In contrast, a recursive DNS server, which is usually a caching server, is able to query the next available DNS server in order to get a response, if it does not have one. This type of server configuration does not store authoritative records; rather the server polls other authoritative servers for that information. Upon receiving a reply, the caching server caches it locally from a preset time period.  
+
+### DNZ Zones and Zone Files  
+
+- Every DNS server maintains complete information about the portion of the NDS name space it is responsible for. This information includes a complete set of authoritative data files.
+
+- The portion of the name space for which a NDS server ha sa complete set of authoritative data files is known as the server's zone. The set of authoritative data files 
