@@ -130,7 +130,7 @@ Below is a example named.conf file:
       recursion           yes;
       dnssec-enable       yes;
       dnssec-validation   yes;
-      dnssec-lookaside    auto; 
+      dnssec-lookaside    auto;
   };
   logging {
     channel default_debug {
@@ -158,3 +158,6 @@ Below is a example named.conf file:
 - The recursive directive instructs the DNS server to act as a recursive server.
 - The next three directives - dnssec-enable, dnssec-validation, and dnssec-lookaside are related to DNS security.
 - The logging function instructs the DNS server to log debug messages of dynamic severity to the /var/named/data/named.run file.
+- The named.conf file must have the named as the owning group and read permission at the group level.
+
+### Analysis of the Default Zone configuration file
