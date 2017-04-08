@@ -74,5 +74,5 @@ The different types of records are described below:
   - Refresh: identifies the amount of time secondary servers wait before requesting zone updates.
   - Retry: determines the amount of time secondary servers wait before they reissue a request for zone updates.
   - Expiry: sets the amount of time for secondary servers wait before they reissue a request for zone updates.
-  - Minimum: denotes the amount of time nameservers cache the zone's data.
-  - 
+  - Minimum: denotes the amount of time name servers cache the zone's data.
+  - Values may be set in seconds (Default), minutes (M), hours (H), days (D) or weeks (W). Comments are followed by the ; character. A domain name at the very beginning identifies the owning domain for this zone. If there is a @, it will point to the value of the $ORIGIN variable. The IM before the SOA identifies it is an Internet record. 
