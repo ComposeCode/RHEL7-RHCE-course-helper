@@ -56,4 +56,8 @@ The root servers sit at the top of the DNS hierarchy in the root zone and are ma
 
 - Every DNS server maintains complete information about the portion of the NDS name space it is responsible for. This information includes a complete set of authoritative data files.
 
-- The portion of the name space for which a NDS server ha sa complete set of authoritative data files is known as the server's zone. The set of authoritative data files 
+- The portion of the name space for which a NDS server has a complete set of authoritative data files is known as the server's zone. The set of authoritative data files is known as zone files or zone databases.
+
+- The zone files contain directives and resource records. Directives control the behaviour of a DNS server and instruct how to undertake tasks or apply special settings to the zone; resource records describe zone limits and assign each individual host an identity.
+
+- In order to provide the name resolution service to a zone, resource records must be defined, directives are optional. Directives in a zone file are prepended by the dollar ($) sign. Some of the common directives are $INCLUDE, $ORIGIN, and $TTL. 
