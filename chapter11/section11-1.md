@@ -129,5 +129,6 @@ Below is a example named.conf file:
 - The pid-file directive provides the file name and location to store the named daemon's PID.
 - The allow-query directive defines a match-list which enables the specified systems to query the DNS server. You can restrict queries to one or more networks by specifying IP addresses of the networks.
 - The recursive directive instructs the DNS server to act as a recursive server.
-- The next three directives - dnssec-enable, dnssec-validation, and dnssec-lookaside.
+- The next three directives - dnssec-enable, dnssec-validation, and dnssec-lookaside are related to DNS security.
+- The logging function instructs the DNS server to log debug messages of dynamic severity to the /var/named/data/named.run file.
 - 
