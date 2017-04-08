@@ -10,6 +10,12 @@ DNS is a tree-like distributed structure that is employed on the Internet and co
 
 Bind, Berkeley Internet Name Domain is an open source implementation of DNS on Unix/Linux operating systems. RHEL7 includes BIND as the standard DNS package.
 
+### BIND Software packages
+
+- The bind software packages are: bind, bind-libs and bind-utils.
+
+- Bind provides the main binaries for BIND. The libs package contains library files for bind and bind-utils. The bind utils package contains resolver tools, such as dig, host and nslookup. 
+
 ### DNS Name Space and Domains
 
 - The DNS Name space is a hierarchical organization of all the domains on the Internet. The root of the name space is represented by a dot. The hierarchy right below the root represents top-level domains (TLDs) that are either generic, such as .com, .net, .edu, .org and .gov, and referred to as gTLDs, or specific to two-letter country-code, such as .ca and uk and referred to as ccTLDs. A DNS domain is a collection of one or more systems.
@@ -98,5 +104,3 @@ server1 IN A 192.168.0.110
 server2 IN A 192.168.0.120
 ```
 All zone database files are maintained by the primary DNS server.
-
-### BIND Software packages
