@@ -208,3 +208,7 @@ The default contents of the named.localhost zone file are shown below:
     A     127.0.0.1
     AAAA  ::1
 ```
+
+### DNS Message Logging
+
+- DNS messages and alerts are logged to /var/log/messages, as are 
