@@ -89,6 +89,14 @@ A sample zone file is presented below:
       1H ; retry                                       []
       1W ; expire                                      []
       3H) ; minimum                                    []
-      IN  NS server1.example.com.
-      server1 IN A 192.168.0.110
+        IN  NS server1.example.com.
+server1 IN A 192.168.0.110
+        IN MX 8 server1.example.com.
+
+server1 IN A 192.168.0.110
+        IN MX 9 server2.example.com.
+server2 IN A 192.168.0.120
 ```
+All zone database files are maintained by the primary DNS server.
+
+### BIND Software packages
