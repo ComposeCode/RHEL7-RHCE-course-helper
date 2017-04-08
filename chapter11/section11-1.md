@@ -213,4 +213,11 @@ The default contents of the named.localhost zone file are shown below:
 
 - DNS messages and alerts are logged to /var/log/messages, as are all messages related to stopping and starting the named service, zone loading and unloading, general information, warning messages, etc.
 
-### Configuring BIND server
+### SELinux Requirements for BIND operation
+
+- By defalt, the named daemon runs confined in its own domain, and it is labelled appropriately with the domain type named_t. This can be confirmed with the ps command:
+
+```
+  # need output from server
+  ps -eZ | grep named
+```
