@@ -186,3 +186,25 @@ Below is a example named.conf file:
       allow-update { none; };
   };
 ```
+
+- Each statement in this file points to a relevant zone file in the /var/named directory:
+
+```
+  // need listing from server
+  ll /var/named
+```
+
+The default contents of the named.localhost zone file are shown below:
+
+```
+  $TTL 1D
+  @ IN SOA @ rname.invalid. (
+        0   ; serial
+        1D  ; refresh
+        1H  ; retry
+        1W  ; expire
+        3H ) ; minimum
+    NS    @
+    A     127.0.0.1
+    AAAA  ::1
+```
