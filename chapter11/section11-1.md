@@ -122,4 +122,6 @@ Below is a example named.conf file:
 
 - Options can be defined at the global level within the options statement or at an individual level within a zone statement, as required.
 
-- 
+- The listen-on directive defines port 53, which the DNS server uses to listen to queries on the localhost interface and the interface configured on the 192.168.0.111 address.
+
+- The systems (or networks or domains), defined within curly brackets and separated by the semicolon character, are called match-list. 
