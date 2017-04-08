@@ -70,3 +70,9 @@ The different types of records are described below:
 - NS, nameserver record. Specifies the name of an authoritative nameserver.
 - PTR, pointer record. Points to a different location in the namespace. it is usually used for reverse lookups.
 - SOA, start of authority record. Defines key authoritative data for a namespace that includes primary DNS server, email address of the administrator and the following:
+  - Serial: indicates the number of times this zone file has been updated.
+  - Refresh: identifies the amount of time secondary servers wait before requesting zone updates.
+  - Retry: determines the amount of time secondary servers wait before they reissue a request for zone updates.
+  - Expiry: sets the amount of time for secondary servers wait before they reissue a request for zone updates.
+  - Minimum: denotes the amount of time nameservers cache the zone's data.
+  - 
