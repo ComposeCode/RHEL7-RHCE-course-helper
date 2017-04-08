@@ -108,4 +108,12 @@ All zone database files are maintained by the primary DNS server.
 
 ### The named.conf file
 
-- The main configuration file for Bind is /etc/named.conf
+- The main configuration file for Bind is /etc/named.conf. It provides the DNS server with the names and locations of zone databases for al the domains the server is responsible for.
+
+- This file typically contains options, zone, and include statements. Each statement begins with { and ends in };. The default version of this file is preconfigured for use as a caching only name server.
+
+Below is a example named.conf file:
+
+```
+  # need named.conf file from server 
+```
