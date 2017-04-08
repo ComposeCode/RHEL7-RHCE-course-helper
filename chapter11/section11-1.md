@@ -161,3 +161,7 @@ Below is a example named.conf file:
 - The named.conf file must have the named as the owning group and read permission at the group level.
 
 ### Analysis of the Default Zone configuration file
+
+- The /etc/named.rfc1912.zones is the default DNS zone configuration file that points to the zone databases located in the /var/named directory. This file is defined with the include directive in the named.conf file and is processed each time the DNS server daemon is started or restarted.
+
+- The default version of this file provides the DNS server with zone information for localhost only. For each zone statement, it specifies a zone name, its type (master for primary, slave for secondary, or forward for forwarding DNS server), its file name that stores zone data and the hostnames  
