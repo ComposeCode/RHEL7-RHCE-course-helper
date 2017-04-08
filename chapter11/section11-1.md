@@ -175,5 +175,14 @@ Below is a example named.conf file:
       file "named.localhost";
       allow-update { none; }
   };
-
+  zone "1.0.0.127.in-addr.arpa" IN {
+    type master;
+    file "named.loopback";
+    allow-upate { none; };
+  };
+  zone "0.in-addr.arpa" IN {
+      type master;
+      file "named.empty";
+      allow-update { none; };
+  };
 ```
