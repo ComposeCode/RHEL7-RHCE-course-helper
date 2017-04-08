@@ -121,7 +121,13 @@ Below is a example named.conf file:
 - In this file, comments begin with the // characters or can be enclosed with /* and */ tags.
 
 - Options can be defined at the global level within the options statement or at an individual level within a zone statement, as required.
-
 - The listen-on directive defines port 53, which the DNS server uses to listen to queries on the localhost interface and the interface configured on the 192.168.0.111 address.
-
-- The systems (or networks or domains), defined within curly brackets and separated by the semicolon character, are called match-list. 
+- The systems (or networks or domains), defined within curly brackets and separated by the semicolon character, are called match-list.
+- The directory directive identifies the working directory location for the named service.
+- The dump-file and statistics-file directives specify the location for the DNS dump and statistics files.
+- The memstatistics-file specifies the location for the memory usage statistics file.
+- The pid-file directive provides the file name and location to store the named daemon's PID.
+- The allow-query directive defines a match-list which enables the specified systems to query the DNS server. You can restrict queries to one or more networks by specifying IP addresses of the networks.
+- The recursive directive instructs the DNS server to act as a recursive server.
+- The next three directives - dnssec-enable, dnssec-validation, and dnssec-lookaside.
+- 
