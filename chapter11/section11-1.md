@@ -60,4 +60,13 @@ The root servers sit at the top of the DNS hierarchy in the root zone and are ma
 
 - The zone files contain directives and resource records. Directives control the behaviour of a DNS server and instruct how to undertake tasks or apply special settings to the zone; resource records describe zone limits and assign each individual host an identity.
 
-- In order to provide the name resolution service to a zone, resource records must be defined, directives are optional. Directives in a zone file are prepended by the dollar ($) sign. Some of the common directives are $INCLUDE, $ORIGIN, and $TTL. 
+- In order to provide the name resolution service to a zone, resource records must be defined, directives are optional. Directives in a zone file are prepended by the dollar ($) sign. Some of the common directives are $INCLUDE, $ORIGIN, and $TTL that let you include additional zone files, append the domain name to simple hostnames and define the default validity (time to live) setting, in seconds, for the zone, respectively.
+
+The different types of records are described below:
+
+- A or AAAA Address Record. Specifies an IPv4 or IPv6 address to be mapped to a hostname.
+- CNAME. Canonical Name record. Maps an alias to a real name.
+- MX. Mail Exchanger record. Points to a weighted list of mail servers configured to receive mail for a domain.
+- NS, nameserver record. Specifies the name of an authoritative nameserver.
+- PTR, pointer record. Points to a different location in the namespace. it is usually used for reverse lookups.
+- SOA 
