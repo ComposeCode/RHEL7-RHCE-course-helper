@@ -48,4 +48,4 @@ The root servers sit at the top of the DNS hierarchy in the root zone and are ma
 
  ### Types of Nameserver Configuration
 
- 
+- There are two fundamental types of DNS server configurations referred to as authoritative and recursive. An authoritative DNS server is usually a primary or secondary server that provides authoritative responses
