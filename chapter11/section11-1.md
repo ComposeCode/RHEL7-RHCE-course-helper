@@ -120,9 +120,17 @@ Below is a example named.conf file:
   options {
       listen-on       port 53 {127.0.0.1; 192.168.0.111;};
       listen-on-v6    port 53 {::1; };
-      directory       "/var/named";
-      dump-file       "/var/named/data/cache_dump.db";
-       
+      directory           "/var/named";
+      dump-file           "/var/named/data/cache_dump.db";
+      statistics-file     "/var/named/data/named_stats.txt"
+      memstatistics-file  "/var/named/data/named_mem_stats.txt";
+      pid-file            "/run/named/named.pid";
+      allow-query         { localhost; };
+      ....
+      recursion           yes;
+      dnssec-enable       yes;
+      dnssec-validation   yes;
+      dnssec-lookaside    auto; 
   };
   logging {
     channel default_debug {
