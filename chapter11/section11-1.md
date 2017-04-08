@@ -81,6 +81,14 @@ A sample zone file is presented below:
 
 ```
   # Need output from a example zone file
-  $TTL 86400                    [24 hours; time to hold data in cache.]
-  $ORIGIN example.com           []
+  $TTL 86400                                           [24 hours; time to hold data in cache.]
+  $ORIGIN example.com                                  [name of the domain]
+  @ IN SOA server1.example.com. root.example.com. (    []
+      0 ; serial                                       []
+      1D ; refresh                                     []
+      1H ; retry                                       []
+      1W ; expire                                      []
+      3H) ; minimum                                    []
+      IN  NS server1.example.com.
+      server1 IN A 192.168.0.110
 ```
