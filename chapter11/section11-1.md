@@ -14,7 +14,7 @@ Bind, Berkeley Internet Name Domain is an open source implementation of DNS on U
 
 - The bind software packages are: bind, bind-libs and bind-utils.
 
-- Bind provides the main binaries for BIND. The libs package contains library files for bind and bind-utils. The bind utils package contains resolver tools, such as dig, host and nslookup. 
+- Bind provides the main binaries for BIND. The libs package contains library files for bind and bind-utils. The bind utils package contains resolver tools, such as dig, host and nslookup.
 
 ### DNS Name Space and Domains
 
@@ -103,4 +103,9 @@ server1 IN A 192.168.0.110
         IN MX 9 server2.example.com.
 server2 IN A 192.168.0.120
 ```
+
 All zone database files are maintained by the primary DNS server.
+
+### The named.conf file
+
+- The main configuration file for Bind is /etc/named.conf
