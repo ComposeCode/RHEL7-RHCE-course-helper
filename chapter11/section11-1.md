@@ -69,4 +69,4 @@ The different types of records are described below:
 - MX. Mail Exchanger record. Points to a weighted list of mail servers configured to receive mail for a domain.
 - NS, nameserver record. Specifies the name of an authoritative nameserver.
 - PTR, pointer record. Points to a different location in the namespace. it is usually used for reverse lookups.
-- SOA 
+- SOA, start of authority record. Defines key authoritative data for a namespace that includes primary DNS server, email address of the administrator and the following:
