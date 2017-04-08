@@ -46,6 +46,8 @@ The root servers sit at the top of the DNS hierarchy in the root zone and are ma
 
 - DNS Client: a DNS Client is used for initiating and sequencing hostname queries by referencing name server information defined in resolver configuration files.
 
- ### Types of Nameserver Configuration
+### Types of Nameserver Configuration
 
-- There are two fundamental types of DNS server configurations referred to as authoritative and recursive. An authoritative DNS server is usually a primary or secondary server that provides authoritative responses
+- There are two fundamental types of DNS server configurations referred to as authoritative and recursive. An authoritative DNS server is usually a primary or secondary server that provides authoritative responses to name resolution queries from its own zone data files.
+
+- In contrast, a recursive DNS server, which is usually a caching server, is able to query the next available DNS server in order to get a response, if it does not have one. This type of server configuration does not store authoritative records; rather the server polls other authoritative servers for that information. Upon receiving a reply, the caching server caches it locally from a preset time period.  
