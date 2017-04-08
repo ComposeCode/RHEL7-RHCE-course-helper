@@ -115,7 +115,24 @@ All zone database files are maintained by the primary DNS server.
 Below is a example named.conf file:
 
 ```
-  # need named.conf file from server
+  // need named.conf file from server
+  // sample is in /usr/share/doc/bind*/sample
+  options {
+      listen-on   port 53 {127.0.0.1; 192.168.0.111;};
+      listen-on-v6 port 53 {::1; };
+      
+  };
+  logging {
+    channel default_debug {
+        file "data/named.run";
+        severity dynamic;
+    };
+  };
+  zone "." IN {
+      type hint;
+      file "named.ca"
+  };
+  include "/etc/named.rfc1912.zones";
 ```
 
 - In this file, comments begin with the // characters or can be enclosed with /* and */ tags.
@@ -131,4 +148,3 @@ Below is a example named.conf file:
 - The recursive directive instructs the DNS server to act as a recursive server.
 - The next three directives - dnssec-enable, dnssec-validation, and dnssec-lookaside are related to DNS security.
 - The logging function instructs the DNS server to log debug messages of dynamic severity to the /var/named/data/named.run file.
-- 
