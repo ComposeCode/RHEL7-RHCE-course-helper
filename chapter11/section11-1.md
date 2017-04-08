@@ -115,5 +115,11 @@ All zone database files are maintained by the primary DNS server.
 Below is a example named.conf file:
 
 ```
-  # need named.conf file from server 
+  # need named.conf file from server
 ```
+
+- In this file, comments begin with the // characters or can be enclosed with /* and */ tags.
+
+- Options can be defined at the global level within the options statement or at an individual level within a zone statement, as required.
+
+- 
