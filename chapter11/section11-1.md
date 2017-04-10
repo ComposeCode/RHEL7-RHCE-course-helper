@@ -253,8 +253,8 @@ These booleans determine whether the BIND service can bind a TCP socket to HTTP 
 
 There are three directives set in this file:
 
-- domain: Specifies the default domain name to be searched for queries. In the absence of this directive, the domain associated with the hostname is assumed, and if the hostname is without a domain name, then the root domain is considered. This directive iseful in a multi-domain environment.
+- domain: Specifies the default domain name to be searched for queries. In the absence of this directive, the domain associated with the hostname is assumed, and if the hostname is without a domain name, then the root domain is considered. This directive useful in a multi-domain environment.
 
-- nameserver:
+- nameserver: Specifies up to three DNS server IP addresses to be queried one at a time in the order in which they are listed for name resolution. If none specified, the DNS server on the localhost is assumed.
 
-- search:
+- search: Specifies up to six domain names, of which, the first must be the local domain. The resolver appends these names one at a time in the order in which they are listed to the hostname being looked up. In the absence of this directive, the local domain is assumed.
