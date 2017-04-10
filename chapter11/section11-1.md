@@ -221,3 +221,40 @@ The default contents of the named.localhost zone file are shown below:
   # need output from server
   ps -eZ | grep named
 ```
+
+The SELinux file type associated with the /etc/named.conf and /etc/named.rfc1912.zones files is named_conf_t and that for the zone directory /var/named is named_zone_t.
+
+```
+  // Need output from server
+  ll -Zd  /etc/named.conf /etc/named.rfc1912.zones /var/named
+```
+
+The SELinux type associated with the DNS port is dns_port_t, and it is place by default. Here is the semanage command that outputs this:
+
+```
+  # needoutput from server
+  semanage port -l | grep dns_
+```
+
+From a SELinux boolean standpoint, there are two booleans that are associated with BIND, and we can see this with getsebool:
+
+```
+  # need output from server
+  getsebool -a | grep ^named
+```
+
+These booleans determine whether the BIND service can bind a TCP socket to HTTP ports and to write master zone files, respectively. Both booleans are turned off by default.
+
+### Understanding and Configuring the DNS Client
+
+- For DNS Client configuration, there are two configuration files of interest: resolv.conf and nsswitch.conf, located in the /etc directory and installed at the time of OS installation.
+
+- The resolv.conf file is the NDS resolver configuration file where we define information to support hostname lookups. This file may be updated manually using a text editor. It is referenced by resolver utilities, such as dig, host and nslookup.
+
+There are three directives set in this file:
+
+- domain: Specifies the default domain name to be searched for queries. In the absence of this directive, the domain associated with the hostname is assumed, and if the hostname is without a domain name, then the root domain is considered. This directive iseful in a multi-domain environment.
+
+- nameserver:
+
+- search:
