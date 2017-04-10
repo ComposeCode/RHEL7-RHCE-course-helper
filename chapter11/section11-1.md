@@ -280,4 +280,8 @@ A sample entry is shown below:
 - unavail: Source down, not responding, or service is dsiabled or not configured (continue, try the next source).
 - tryagain: Source of service is busy temporarily, try again later. Continue to try the next source.
 
-Here is an example 
+Here is an example line entry in the nsswitch.conf file, it shows two sources for name resolution: DNS (the /etc/resolv.conf file and /etc/hosts):
+
+```
+  hosts:  dns files
+```
