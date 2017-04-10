@@ -276,4 +276,8 @@ A sample entry is shown below:
 - In the presence of multiple sources, the file also identifies the order in which to consult them and what to do next based on the status result we receive from the preceding source. There are four keywords, success, notfound, unavail, and try again, that affect this behaviour:
 
 - success: Information found in the source and returrned to the requester (default action, return, do not try the next source)
-- notfound: 
+- notfound: Information not found in the source (continue, try the next source).
+- unavail: Source down, not responding, or service is dsiabled or not configured (continue, try the next source).
+- tryagain: Source of service is busy temporarily, try again later. Continue to try the next source.
+
+Here is an example 
