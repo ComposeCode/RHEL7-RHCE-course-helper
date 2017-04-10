@@ -271,6 +271,9 @@ A sample entry is shown below:
 
 ### The name service switch configuration file.
 
-The nsswitch.conf file is referenced by many system and network tools to determine the source, such as NIS, NIS+, LDAP, DNS or local files, for obtaining information about users, user aging, groups, mail aliases, hostnames, networks, protocols and so on.
+- The nsswitch.conf file is referenced by many system and network tools to determine the source, such as NIS, NIS+, LDAP, DNS or local files, for obtaining information about users, user aging, groups, mail aliases, hostnames, networks, protocols and so on.
 
-In the presence of multiple sources, the file also identifies the order in which to consult them and what to do next based on the status result we receive from the preceding source. There are four keywords, success, notfound, unavail, and try again, that affect this behaviour. 
+- In the presence of multiple sources, the file also identifies the order in which to consult them and what to do next based on the status result we receive from the preceding source. There are four keywords, success, notfound, unavail, and try again, that affect this behaviour:
+
+- success: Information found in the source and returrned to the requester (default action, return, do not try the next source)
+- notfound: 
