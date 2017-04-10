@@ -258,3 +258,19 @@ There are three directives set in this file:
 - nameserver: Specifies up to three DNS server IP addresses to be queried one at a time in the order in which they are listed for name resolution. If none specified, the DNS server on the localhost is assumed.
 
 - search: Specifies up to six domain names, of which, the first must be the local domain. The resolver appends these names one at a time in the order in which they are listed to the hostname being looked up. In the absence of this directive, the local domain is assumed.
+
+A sample entry is shown below:
+
+```
+  domain somedomain.com
+  search somedomain.com
+  nameserver 191.11.11.22
+```
+
+- On a system with this file absent, the resolver utilities only query the name server configured on the localhost, determine domain name from the hostname of the system, and construct the search patch from the domain name.
+
+### The name service switch configuration file.
+
+The nsswitch.conf file is referenced by many system and network tools to determine the source, such as NIS, NIS+, LDAP, DNS or local files, for obtaining information about users, user aging, groups, mail aliases, hostnames, networks, protocols and so on.
+
+In the presence of multiple sources, the file also identifies the order in which to consult them and what to do next based on the status result we receive from the preceding source. There are four keywords, success, notfound, unavail, and try again, that affect this behaviour. 
