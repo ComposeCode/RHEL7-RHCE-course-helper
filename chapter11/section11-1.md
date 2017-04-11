@@ -382,4 +382,11 @@ If the DNS service is missing from the list, add the port to the persistent rule
   firewall-cmd --permanent --add-service dns ; firewall-cmd --reload
 ```
 
-- On a configured and working local nameserver, the step above is the only one required to verify from a remote client. 
+- On a configured and working local nameserver, the step above is the only one required to verify from a remote client.
+
+From the client, the following tests can be performed:
+
+```
+  # need output from server
+  # ping 192.168.0.111 -c2
+```
