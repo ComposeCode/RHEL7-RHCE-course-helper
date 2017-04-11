@@ -340,3 +340,17 @@ To perform a reverse lookup, just use the IP address:
 - The -a option can be used to provide more output.
 
 ## The nslookup utility
+
+- The nslookup utility is another command used to lookup DNS entries. It queries nameservers listed in the resolve.conf file or specified at the command line.
+
+- To lookup the IP address of a hostname:
+
+```
+  # nslookup redhat.com, need output from server.
+```
+
+- To perform a reverse lookup:
+
+```
+  # nslookup 8.8.8.8, need output from server.
+```
