@@ -129,4 +129,8 @@ The important commands to remember are: create, drop, show, delete, describe, in
 - Insert: inserts data into a table
 - Rename: renames a table.
 - Select: retrieves data from a table.
-- Update: updates a record in a table. 
+- Update: updates a record in a table.
+
+- Each subcommand executed at the MariaDB prompt expects a semicolon (:) at the end.
+
+## Backing up and Restoring a database or table
