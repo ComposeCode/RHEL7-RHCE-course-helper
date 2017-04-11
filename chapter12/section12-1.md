@@ -84,5 +84,16 @@ The SELinux type associated with the mysqld port is mysqld_port_t and it is in p
 
 ```
   # need output from the server
-  semanage port -l | grep mysqld 
+  semanage port -l | grep mysqld
 ```
+
+From an SELinux boolean perspective, there are two booleans that are associated with MariaDB and we can see this with getsebool command:
+
+```
+  # need output from server
+  # getsebool -a | grep mysql
+```
+
+- These booleans allow or disallow the mysqld daemon process to connect to any port and users to connect to the local MariaDB server, respectively. Both are disabled by default.
+
+## Starting the MariaDB Shell and Understanding its usage
