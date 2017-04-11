@@ -390,3 +390,14 @@ From the client, the following tests can be performed:
   # need output from server
   # ping 192.168.0.111 -c2
 ```
+
+- The connectivity is fully operation based on the previous command. If that does not work, there will be an issue with the physical or virtual interfaces on the 192.168.0 network.
+
+- Assuming the connectivity is OK, try the dig command:
+
+```
+  # need sample output
+  dig @192.168.0.110 getitcertify.com
+```
+
+If dig reports an error, the configuration of the nameserver should be checked again based on previous exapmples. 
