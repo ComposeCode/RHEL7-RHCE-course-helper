@@ -285,3 +285,13 @@ Here is an example line entry in the nsswitch.conf file, it shows two sources fo
 ```
   hosts:  dns files
 ```
+
+Based on the default behaviour, the search will terminate if the requested information is found in DNS. However, we can alter this behavior and instruct the lookup program to return if the requested information is not found in DNS. The modified entry will look like:
+
+```
+  hosts: dns[NOTFOUND=return] files
+```
+
+This altered entry will ignore hosts file.
+
+### DNS Lookup Utilities
