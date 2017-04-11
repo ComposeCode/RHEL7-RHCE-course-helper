@@ -41,4 +41,13 @@ The primary configuration file for MariaDB is /etc/my.conf, which sets the globa
 
 - The my.cnf file contains two configuration groups by default. These groups are mysqld and mysqld_safe with some settings under each one of them. Their purpose is to separate the configuration eneded by the mysqld daemon, mysqld_safe startup progrram and mysql client program at startup.
 
-- The directives in this file set  
+- The directives in this file set several defaults, including the locations to store database files, log files and the PID file.
+
+- The includedir directive at the bottom of the file instructs the startup program to look for additional configuration files in the /et/cmy.cnf.d directory and process tem if they exist. By default, there are three configuration files in this directory:
+
+```
+  # need output from server:
+  ll /et/cmy.cnf.d
+```
+
+- 
