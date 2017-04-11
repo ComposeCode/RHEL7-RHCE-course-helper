@@ -354,3 +354,14 @@ To perform a reverse lookup, just use the IP address:
 ```
   # nslookup 8.8.8.8, need output from server.
 ```
+
+- nslookup also provides an interactive mode:
+
+```
+  # nslookup
+  > server server1
+  > ibm.com
+  > exit
+```
+
+### Troubleshooting DNS Client Issues 
