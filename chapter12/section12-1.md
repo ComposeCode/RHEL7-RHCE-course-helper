@@ -134,3 +134,44 @@ The important commands to remember are: create, drop, show, delete, describe, in
 - Each subcommand executed at the MariaDB prompt expects a semicolon (:) at the end.
 
 ## Backing up and Restoring a database or table
+
+- Backup is a function of duplicating data to an alternative location for use in the event of a data loss. Restore is the opposite of the backup function.
+
+- MariaDB offers a tool called mysqldump for creating logical backups of data. To restore a logical backup, the mysql tool can be used.
+
+To backup all databases on the system, use the following commans:
+
+```
+  # backup all databases.
+  mysqldump -u root -p --all-databases > db_bkp_all.sql
+```
+
+To restore a specific database, such as DB1, run the following command:
+
+```
+  # restore a specific database
+  mysql -u root -p DB1 < db_backup_all.sql
+```
+
+To backup specific databases, use the --databases option:
+
+```
+  # need output from server
+  mysqldump -u root -p --databases DB1 DB2 DB3 > db_bkp_db123.sql
+```
+
+To restore all three databases form the above;
+
+```
+  mysql -u root -p DB1 DB2 DB3 < db_bkp_db123.sql
+```
+
+To backup specific tables:
+
+```
+  mysql -u root -p DB1 tbl1 tbl2 > tbl_bkp_gbl12.sql
+```
+
+To restore only tbl1 fro the above:
+
+mysql -u root -p DB1 tbl1 < tbl_bkp_tbl12.sql; 
