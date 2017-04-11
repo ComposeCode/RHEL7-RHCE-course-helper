@@ -34,4 +34,9 @@ This chapter will cover relational databases, specifically, MariaDB packages, th
 
 The primary configuration file for MariaDB is /etc/my.conf, which sets the global defaults for mysql shell program, mysqld_safe startup script and the mysqld daemon process. The uncommented line entries from this file are presented below:
 
+```
+  # grep -v ^# /etc/my.cnf
+  # need output from server
+```
+
 - 
