@@ -274,7 +274,7 @@ The OpenSSL Log files are located in the /var/log/httpd directory, which is sumb
 - CGI Scripts may be written in Perl, Ruby, Python, C, shell or other programming languages.
 
 ```
-  # need example of simple CGI scripts. 
+  # need example of simple CGI scripts.
 ```
 
 ### Exercises.
