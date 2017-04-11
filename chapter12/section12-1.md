@@ -50,4 +50,32 @@ The primary configuration file for MariaDB is /etc/my.conf, which sets the globa
   ll /et/cmy.cnf.d
 ```
 
-- These files set configurations for general clients, specific MariaDB client tools and MariaDB server program, mysqld, respectively. The default files have several configuration groups defined, but they all are empty. 
+- These files set configurations for general clients, specific MariaDB client tools and MariaDB server program, mysqld, respectively. The default files have several configuration groups defined, but they all are empty.
+
+## Logging MariaDB Messages
+
+- The default file for storing MariaDB logs is mariadb.log, located in the /var/log/mariadb directory, as defined in the configuration file. This log file captures all errors, alerts, warnings, informational and other general messages related to MariaDB.
+
+```
+  # need output from server
+```
+
+## Managing MariaDB
+
+- Managing MariaDB is done using the MariaDB software. This includes creating tables, running queries, creating databases, importing backups etc.
+
+## MariaDB SELinux Requirements
+
+- By default, the mysqld daemon process runs confined in its own domain and it is labeled appropriately with domain type mysqld_t. This can be confirmed with the ps command:
+
+```
+  # need output from the server
+  # ps -eZ | grep mysqld
+```
+
+- The SELinux file type associated with the mysqld daemon file is mysql_exec_t configuration files in /et/cmy.cnf.d directory is etc_t, database files in the /var/lib/mysql directory is mysql_db_t and log files located in the /var/log/mariadb directory is mysql_log_t. Here is an ll command output that verifies this information:
+
+```
+  # need output from the server
+  ll -dZ /usr/libexec/mysqld /etc/my.cnf.d /var/lib/mysql /var/log/mariadb
+```
