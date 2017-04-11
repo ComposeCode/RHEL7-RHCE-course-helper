@@ -79,3 +79,10 @@ The primary configuration file for MariaDB is /etc/my.conf, which sets the globa
   # need output from the server
   ll -dZ /usr/libexec/mysqld /etc/my.cnf.d /var/lib/mysql /var/log/mariadb
 ```
+
+The SELinux type associated with the mysqld port is mysqld_port_t and it is in place by default. Here is the semanage command output that validates this information:
+
+```
+  # need output from the server
+  semanage port -l | grep mysqld 
+```
