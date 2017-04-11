@@ -50,4 +50,4 @@ The primary configuration file for MariaDB is /etc/my.conf, which sets the globa
   ll /et/cmy.cnf.d
 ```
 
-- 
+- These files set configurations for general clients, specific MariaDB client tools and MariaDB server program, mysqld, respectively. The default files have several configuration groups defined, but they all are empty. 
