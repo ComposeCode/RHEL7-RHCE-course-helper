@@ -321,4 +321,18 @@ To perform a reverse lookup on the IP address, use the -x option:
   ...
 ```
 
-## The host utility 
+## The host utility
+
+host is a simple DNS lookup utility that works on the same principles as the dig command. This produces less output:
+
+```
+  # host redhat.com, need output from server  
+  ...
+```
+
+To perform a reverse lookup, just use the IP address:
+
+```
+  host 8.8.8.8, need output from server.
+  ...
+```
