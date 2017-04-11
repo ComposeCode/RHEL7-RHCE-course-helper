@@ -400,4 +400,4 @@ From the client, the following tests can be performed:
   dig @192.168.0.110 getitcertify.com
 ```
 
-If dig reports an error, the configuration of the nameserver should be checked again based on previous exapmples. 
+If dig reports an error, the configuration of the nameserver should be checked again based on previous examples. 
