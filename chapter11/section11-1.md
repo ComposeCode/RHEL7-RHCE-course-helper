@@ -303,9 +303,22 @@ This altered entry will ignore hosts file.
 
 - The dig utility is a DNS lookup utility. It queries the nameserver specified at the command line or consults the resolv.conf file to determine the nameservers to be used for lookups if no nameserver is supplied with the command.
 
-- In case the nameservers ar enable to fulfil the query, the dig command contacts one of the root DNS servers listed in the /etc/named.ca file for directions. This tool may be used for DNS troubleshooting because of its flexibility and verbosity. To perform a lookup to get the IP address of redhat.com using the nameservers listed in the resolv.conf file:
+- In case the nameservers ar enable to fulfil the query, the dig command contacts one of the root DNS servers listed in the /etc/named.ca file for directions.
+
+- This tool may be used for DNS troubleshooting because of its flexibility and verbosity.
+
+- To perform a lookup to get the IP address of redhat.com using the nameservers listed in the resolv.conf file:
 
 ```
-  # dig redhat.com, need output from file.
+  # dig redhat.com, need output from server
   ...
 ```
+
+To perform a reverse lookup on the IP address, use the -x option:
+
+```
+  # dig -x 8.8.8.8 need output from server
+  ...
+```
+
+## The host utility 
