@@ -121,4 +121,12 @@ The shell provides many commands:
 ```
 
 The important commands to remember are: create, drop, show, delete, describe, insert, rename, select and update.
-- Create: used to create a database or table
+- Create: used to create a database or table.
+- Drop: drops a database or table.
+- Show: lists databases or tables.
+- Delete: removes a record from a table.
+- Describe: shows the structure of a table
+- Insert: inserts data into a table
+- Rename: renames a table.
+- Select: retrieves data from a table.
+- Update: updates a record in a table. 
