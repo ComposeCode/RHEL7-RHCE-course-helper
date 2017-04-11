@@ -97,3 +97,28 @@ From an SELinux boolean perspective, there are two booleans that are associated 
 - These booleans allow or disallow the mysqld daemon process to connect to any port and users to connect to the local MariaDB server, respectively. Both are disabled by default.
 
 ## Starting the MariaDB Shell and Understanding its usage
+
+- The MariaDB server software installed and root user password setup, you can invoke the shell interface using the mysql command:
+
+```
+  # need output from server
+  mysql -u root -p ...
+```
+
+The shell provides many commands:
+
+```
+  # neeed output from server
+  MariaDB [(none)]> help
+      ....
+```
+
+- To display conneciton status, type status, this will display the connection status of the prompt:
+
+```
+  # need output from server
+  status
+```
+
+The important commands to remember are: create, drop, show, delete, describe, insert, rename, select and update.
+- Create: used to create a database or table
