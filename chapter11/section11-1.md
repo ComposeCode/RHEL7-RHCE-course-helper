@@ -364,4 +364,22 @@ To perform a reverse lookup, just use the IP address:
   > exit
 ```
 
-### Troubleshooting DNS Client Issues 
+### Troubleshooting DNS Client Issues
+
+- Once a nameserver is configured properly on a system and tested locally, the next step is to test it from a remote client. Useful tools include: ping, ip, dig, nslookup and host should be used to resolve issue.s
+
+- The first step is to check the firewall:
+
+```
+  # need to test firewall:
+  firewall-cmd --list-services
+  ...
+```
+
+If the DNS service is missing from the list, add the port to the persistent rules:
+
+```
+  firewall-cmd --permanent --add-service dns ; firewall-cmd --reload
+```
+
+- On a configured and working local nameserver, the step above is the only one required to verify from a remote client. 
