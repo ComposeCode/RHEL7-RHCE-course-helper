@@ -4,6 +4,6 @@ This chapter will cover relational databases, specifically, MariaDB packages, th
 
 ### Understanding Databases, DBMS and MariaDB
 
-- MariaDB is an open source relational database. A database is a structured repository of data that is accessed and administered by management software, such as MariaDB. Databases created with MariaDB use the relational model to identify the database structure and data storage, organizaiton and handling. A relational database uses a table-based format.
+- MariaDB is an open source relational database. A database is a structured repository of data that is accessed and administered by management software, such as MariaDB. Databases created with MariaDB use the relational model to identify the database structure and data storage, organization and handling. A relational database uses a table-based format.
 
 - A database is a structure collection of data, which is comprised of facts and figures of something and can be processed to generate meaningful results. 
