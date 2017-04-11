@@ -39,4 +39,6 @@ The primary configuration file for MariaDB is /etc/my.conf, which sets the globa
   # need output from server
 ```
 
-- The my.cnf file contains two configuration groups by default. These groups are mysqld and mysqld_safe 
+- The my.cnf file contains two configuration groups by default. These groups are mysqld and mysqld_safe with some settings under each one of them. Their purpose is to separate the configuration eneded by the mysqld daemon, mysqld_safe startup progrram and mysql client program at startup.
+
+- The directives in this file set  
